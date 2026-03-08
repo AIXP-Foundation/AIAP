@@ -1,0 +1,87 @@
+site_name: AIAP Protocol
+site_description: AI Application Protocol — Structuring, Validating, and Governing AI Programs
+site_url: https://aiap.dev
+repo_url: https://github.com/AISOP-AIAP-SoulBot/AIAP
+repo_name: AIAP
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Specification: specification.md
+  - Topics:
+    - What is AIAP?: topics/what-is-aiap.md
+    - Core Concepts: topics/core-concepts.md
+    - Axiom 0: topics/axiom-0.md
+    - AISOP Format: topics/aisop-format.md
+    - Structural Patterns: topics/structural-patterns.md
+    - Quality Standards: topics/quality-standards.md
+    - Security Model: topics/security-model.md
+    - Discovery & Registry: topics/discovery-and-registry.md
+    - Lifecycle: topics/lifecycle.md
+    - Interoperability: topics/interoperability.md
+    - Zero-Entropy Resonance: topics/zero-entropy-resonance.md
+    - Semantic Compiler: topics/semantic-compiler.md
+  - Guides:
+    - Getting Started: guides/getting-started.md
+    - First AIAP Program: guides/first-aiap-program.md
+    - Pattern Selection: guides/pattern-selection.md
+    - Quality Walkthrough: guides/quality-walkthrough.md
+  - Reference:
+    - AIAP.md Fields: reference/aiap-md-fields.md
+    - AISOP Fields: reference/aisop-fields.md
+    - Quality Rules: reference/quality-rules.md
+    - Threat Taxonomy: reference/threat-taxonomy.md
+    - Error Codes: reference/error-codes.md
+    - Glossary: reference/glossary.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/AISOP-AIAP-SoulBot
