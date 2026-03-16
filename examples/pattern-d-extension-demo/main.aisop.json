@@ -1,0 +1,82 @@
+[
+    {
+        "role": "system",
+        "content": {
+            "protocol": "AIAP V1.0.0",
+            "id": "extension.demo",
+            "version": "1.0.0",
+            "name": "Extension Demo — All 7 RESERVED_KEYS",
+            "description": "Demonstration program using all 7 RESERVED_KEYS (on_error, retry_policy, context_filter, output_mapping, map, join, constraints). Validates Runtime extension parsing end-to-end.",
+            "summary": "Extension demo: fetch data, batch process with map, join results, handle errors.",
+            "tools": ["file_system"],
+            "params": {
+                "data_source": "string, default: 'sample', The data source to fetch from."
+            },
+            "system_prompt": "You are an extension demo executor. Process data items and handle errors gracefully."
+        }
+    },
+    {
+        "role": "user",
+        "content": {
+            "aisop": {
+                "main": "graph TD\n  Start[Start] --> FetchData[Fetch Data]\n  FetchData --> BatchProcess[Batch Process]\n  BatchProcess -->|for each item| ProcessItem[Process Item]\n  ProcessItem --> WaitAll[Wait All]\n  FetchData -.-> ErrorHandler[Error Handler]\n  WaitAll --> Summarize[Summarize]\n  ErrorHandler --> Summarize\n  Summarize --> End((End))"
+            },
+            "functions": {
+                "Start": {
+                    "step1": "Initialize execution context with data_source parameter."
+                },
+                "FetchData": {
+                    "step1": "Fetch data list from the specified source.",
+                    "step2": "Store results in state.data_items.",
+                    "retry_policy": {
+                        "max_attempts": 3,
+                        "correction_prompt": "Previous fetch failed. Please retry with alternative approach."
+                    },
+                    "on_error": {
+                        "timeout": "ErrorHandler",
+                        "default": "ErrorHandler"
+                    },
+                    "constraints": [
+                        "Data source must be accessible",
+                        "Returned data must not be empty"
+                    ]
+                },
+                "BatchProcess": {
+                    "step1": "Initiate batch processing of all fetched items.",
+                    "map": {
+                        "items_path": "state.data_items",
+                        "iterator": "ProcessItem",
+                        "concurrency": 2
+                    }
+                },
+                "ProcessItem": {
+                    "step1": "Analyze and transform a single data item.",
+                    "step2": "Return processed result.",
+                    "context_filter": {
+                        "include": ["current_item", "config"]
+                    },
+                    "output_mapping": "processed_results"
+                },
+                "WaitAll": {
+                    "step1": "Verify all parallel processing tasks have completed.",
+                    "join": {
+                        "wait_for": ["ProcessItem"]
+                    }
+                },
+                "Summarize": {
+                    "step1": "Aggregate all processed results into a final summary.",
+                    "step2": "Output the summary report."
+                },
+                "ErrorHandler": {
+                    "step1": "Log error details.",
+                    "step2": "Return degraded result with error context.",
+                    "constraints": [
+                        "Must log error before returning",
+                        "Degraded result must indicate which step failed"
+                    ]
+                },
+                "End": {}
+            }
+        }
+    }
+]
