@@ -134,7 +134,7 @@ governance. It defines what is syntactically valid, nothing more.
 The Authority Layer owns the governance protocol. It defines the rules that AISOP programs
 must follow to be considered well-governed: quality standards (ThreeDimTest), trust levels
 (T1--T4), threat taxonomies (AT1--AT6), structural patterns (A--G), node count guidelines,
-and the foundational axiom -- **Axiom 0: Human Sovereignty and Benefit**.
+and the foundational axiom -- **Axiom 0: Human Sovereignty and Wellbeing**.
 
 **Responsibility:** Governance rules, quality standards, certification.
 **Analogy:** ISO defines quality management standards. It does not manufacture products.
@@ -224,6 +224,6 @@ The three protocols are complementary, not competitive.
 
 ---
 
-> **Align: Human Sovereignty and Benefit.**
+> **Align: Human Sovereignty and Wellbeing.**
 > Version: AIAP V1.0.0
 > [www.aiap.dev](https://www.aiap.dev)

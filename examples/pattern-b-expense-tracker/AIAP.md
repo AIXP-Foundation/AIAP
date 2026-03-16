@@ -3,7 +3,7 @@ protocol: "AIAP V1.0.0"
 authority: aiap.dev
 seed: aisop.dev
 executor: soulbot.dev
-axiom_0: Human_Sovereignty_and_Benefit
+axiom_0: Human_Sovereignty_and_Wellbeing
 governance_mode: NORMAL
 name: expense_tracker
 version: "1.0.0"
@@ -67,4 +67,4 @@ Expense Tracker follows AIAP V1.0.0 with Axiom 0 alignment. Financial data priva
 Entry file: `main.aisop.json` --- stateless NLU router.
 Tools: `file_system` (required) for data persistence.
 
-Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
+Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

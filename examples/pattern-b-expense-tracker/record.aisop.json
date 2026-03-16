@@ -7,7 +7,7 @@
     "version": "1.0.0",
     "summary": "Records new expense entries to persistent storage.",
     "description": "Parses expense details from user input, validates the data, and writes a new entry to the expense data file.",
-    "system_prompt": "Expense recording module. Parse expense details and persist to storage. Mirror User's exact language and script variant. Align: Human Sovereignty and Benefit.",
+    "system_prompt": "Expense recording module. Parse expense details and persist to storage. Mirror User's exact language and script variant. Align: Human Sovereignty and Wellbeing.",
     "instruction": "RUN aisop.record",
     "aisop": {
       "record": "graph TD\n  Start[Receive Expense Input] --> Parse[Parse Expense Details]\n  Parse -->|valid| Confirm[Confirm with User]\n  Parse -->|invalid| Error[Report Parse Error]\n  Confirm -->|confirmed| Write[Write to Storage]\n  Confirm -->|rejected| End[Return Response]\n  Write -->|success| Format[Format Confirmation]\n  Write -->|failure| Error\n  Error --> Format\n  Format --> End"

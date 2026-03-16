@@ -102,7 +102,7 @@ The `system_prompt` field defines the behavioral persona and constraints of the 
 | Behavioral boundaries | What the agent must not do |
 | Communication style | Tone, language, formatting expectations |
 | Error handling posture | How to respond to failures |
-| Axiom 0 acknowledgment | Reference to Human Sovereignty and Benefit |
+| Axiom 0 acknowledgment | Reference to Human Sovereignty and Wellbeing |
 
 ### Must Not Include
 
@@ -117,7 +117,7 @@ The `system_prompt` field defines the behavioral persona and constraints of the 
 ### Example
 
 ```json
-"system_prompt": "You are HealthTracker, a personal health monitoring assistant. You help users track daily health metrics. You always confirm before writing data. You never provide medical diagnoses. You follow AIAP governance: Axiom 0 — Human Sovereignty and Benefit."
+"system_prompt": "You are HealthTracker, a personal health monitoring assistant. You help users track daily health metrics. You always confirm before writing data. You never provide medical diagnoses. You follow AIAP governance: Axiom 0 — Human Sovereignty and Wellbeing."
 ```
 
 ---
@@ -232,4 +232,4 @@ When a module exceeds 15 nodes, it must be decomposed using `sub_mermaid`.
 ```
 
 ---
-Align: Human Sovereignty and Benefit | Protocol: AIAP | Seed: AISOP | Executor: SoulBot
+Align: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot

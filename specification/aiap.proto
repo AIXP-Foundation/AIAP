@@ -7,7 +7,7 @@
 //
 // Version: AIAP V1.0.0
 // Authority: aiap.dev
-// Axiom 0: Human_Sovereignty_and_Benefit
+// Axiom 0: Human_Sovereignty_and_Wellbeing
 
 syntax = "proto3";
 package aiap.v1;
@@ -60,7 +60,7 @@ message GovernanceChain {
   string seed_domain = 2;
   // The executor domain (e.g., "soulbot.dev").
   string executor_domain = 3;
-  // MUST be "Human_Sovereignty_and_Benefit". Immutable.
+  // MUST be "Human_Sovereignty_and_Wellbeing". Immutable.
   string axiom_0 = 4;
 }
 
@@ -183,7 +183,7 @@ message ProgramMetadata {
   string authority = 2;    // e.g., "aiap.dev"
   string seed = 3;         // e.g., "aisop.dev"
   string executor = 4;     // e.g., "soulbot.dev"
-  string axiom_0 = 5;      // "Human_Sovereignty_and_Benefit"
+  string axiom_0 = 5;      // "Human_Sovereignty_and_Wellbeing"
   GovernanceMode governance_mode = 6;
 
   // --- Project fields (6 required) ---

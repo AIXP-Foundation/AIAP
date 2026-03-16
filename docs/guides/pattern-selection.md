@@ -196,4 +196,4 @@ When upgrading patterns:
 
 ---
 
-> Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
+> Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

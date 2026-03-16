@@ -105,7 +105,7 @@ These fields establish the program's governance posture:
 | `structural_pattern` | string | The program's structural pattern: `A` through `G`. |
 | `quality_target` | string | The target ThreeDimTest grade: `S`, `A`, `B`, `C`, `D`. |
 | `threat_model` | list | Applicable threat categories from the AT1--AT6 taxonomy. |
-| `axiom_alignment` | string | Must be `"Axiom 0: Human Sovereignty and Benefit"`. |
+| `axiom_alignment` | string | Must be `"Axiom 0: Human Sovereignty and Wellbeing"`. |
 
 #### Project Fields (6)
 
@@ -130,7 +130,7 @@ trust_level: T2
 structural_pattern: C
 quality_target: A
 threat_model: [AT1, AT3]
-axiom_alignment: "Axiom 0: Human Sovereignty and Benefit"
+axiom_alignment: "Axiom 0: Human Sovereignty and Wellbeing"
 
 # Project
 name: "Research Assistant"
@@ -283,13 +283,13 @@ Every `system_prompt` must include the following:
 | **Role Positioning** | Establishes the model's identity and domain | `"You are a research assistant specializing in climate science."` |
 | **Domain Guidelines** | Defines the boundaries of acceptable behavior | `"Only cite peer-reviewed sources published after 2015."` |
 | **Mirror User's Language** | Ensures the model responds in the user's language | `"Mirror User's language."` |
-| **Axiom 0 Alignment** | Declares commitment to the foundational axiom | `"Align: Human Sovereignty and Benefit."` |
+| **Axiom 0 Alignment** | Declares commitment to the foundational axiom | `"Align: Human Sovereignty and Wellbeing."` |
 
 The "Mirror User's language" directive ensures that AIAP programs are inherently
 multilingual without requiring per-language configuration. The model detects the user's
 language and responds in kind.
 
-The "Align: Human Sovereignty and Benefit" statement is not decorative. It is a governance
+The "Align: Human Sovereignty and Wellbeing" statement is not decorative. It is a governance
 marker that binds the program to Axiom 0 -- the non-negotiable principle that AI systems
 must serve human interests.
 
@@ -481,12 +481,12 @@ functional nodes, and quality dimensions -- works together to produce AI program
 - Review the full AIAP specification at [aiap.dev](https://www.aiap.dev).
 - Explore Structural Patterns A through G in the
   [Structural Patterns Guide](structural-patterns.md).
-- Learn about Trust Levels T1 through T4 in the [Trust Levels Guide](trust-levels.md).
+- Learn about Trust Levels T1 through T4 in the [Security Model](security-model.md).
 - Understand the Threat Taxonomy AT1 through AT6 in the
-  [Threat Taxonomy Guide](threat-taxonomy.md).
+  [Threat Taxonomy Reference](../reference/threat-taxonomy.md).
 
 ---
 
-> **Align: Human Sovereignty and Benefit.**
+> **Align: Human Sovereignty and Wellbeing.**
 > Version: AIAP V1.0.0
 > [www.aiap.dev](https://www.aiap.dev)

@@ -15,7 +15,7 @@ These fields establish protocol identity and runtime authority. All six are mand
 | `authority` | string | Governance domain | `aiap.dev` | Must be `aiap.dev` |
 | `seed` | string | Format specification domain | `aisop.dev` | Must be `aisop.dev` |
 | `executor` | string | Runtime execution domain | `soulbot.dev` | Must be `soulbot.dev` |
-| `axiom_0` | string | Core immutable axiom | `Human_Sovereignty_and_Benefit` | Exact match required |
+| `axiom_0` | string | Core immutable axiom | `Human_Sovereignty_and_Wellbeing` | Exact match required |
 | `governance_mode` | string | Operating mode | `NORMAL` | `NORMAL` or `DEV` |
 
 ### Governance Mode Values
@@ -250,10 +250,10 @@ Every `AIAP.md` must end with the closing seal:
 
 ```
 ---
-Align: Human Sovereignty and Benefit | Protocol: AIAP | Seed: AISOP | Executor: SoulBot
+Align: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot
 ```
 
 The seal is a machine-readable and human-readable marker that confirms the document adheres to the AIAP governance framework. Omitting the seal is a D2 (Format Completeness) violation.
 
 ---
-Align: Human Sovereignty and Benefit | Protocol: AIAP | Seed: AISOP | Executor: SoulBot
+Align: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot

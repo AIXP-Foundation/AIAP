@@ -14,12 +14,12 @@
 | AIAP Program | A complete project written in AISOP format following AIAP governance rules; consists of one AIAP.md and one or more .aisop.json files |
 | AISOP | AI Standard Operating Procedure -- the .aisop.json file format that defines executable agent behavior through Mermaid graphs and function definitions |
 | Applicability Condition | Optional AIAP.md field defining triggers, preconditions, exclusions, and confidence thresholds for program activation |
-| Axiom 0 | "Human Sovereignty and Benefit" -- the immutable, non-overridable core constraint of the AIAP protocol; all programs must align with this axiom |
+| Axiom 0 | "Human Sovereignty and Wellbeing" -- the immutable, non-overridable core constraint of the AIAP protocol; all programs must align with this axiom |
 | Benchmark | Optional AIAP.md field declaring quality targets a program should meet or exceed |
 | Brain Principle | Quality rule C6 requiring each module to have a single cognitive responsibility |
 | Capabilities | Optional AIAP.md field declaring offered and required capabilities for ecosystem interoperability |
 | Circuit Breaker | Named error recovery pattern defined by rule I4: `fails -> retry -> circuit-breaker -> fallback: {named alternative} -> inform user` |
-| Closing Seal | End-of-document marker: "Align: Human Sovereignty and Benefit | Protocol: AIAP | Seed: AISOP | Executor: SoulBot" -- required on all AIAP documents |
+| Closing Seal | End-of-document marker: "Align: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot" -- required on all AIAP documents |
 | Code Trust Gate | Six-step verification process for Pattern G embedded code: source verification, hash validation, permission audit, dependency scan, sandbox test, annotation reconciliation |
 | Composite Score | The product of Correctness, Intrinsic, and Detail scores: `C x I x D` |
 | Constraint Quality | Quality rule C2 requiring all constraints to be explicit, testable, and non-contradictory |
@@ -157,4 +157,4 @@
 | Simulation categories | `quality-rules.md` |
 
 ---
-Align: Human Sovereignty and Benefit | Protocol: AIAP | Seed: AISOP | Executor: SoulBot
+Align: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot

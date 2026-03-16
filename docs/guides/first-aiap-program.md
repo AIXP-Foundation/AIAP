@@ -51,7 +51,7 @@ protocol: "AIAP V1.0.0"
 authority: aiap.dev
 seed: aisop.dev
 executor: soulbot.dev
-axiom_0: Human_Sovereignty_and_Benefit
+axiom_0: Human_Sovereignty_and_Wellbeing
 governance_mode: NORMAL
 name: calculator
 version: "1.0.0"
@@ -86,7 +86,7 @@ It follows AIAP V1.0.0 with Axiom 0 alignment.
 Entry file: `main.aisop.json`
 Tools: None required (pure computation)
 
-Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
+Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
 ```
 
 ### Required Fields Explained
@@ -97,7 +97,7 @@ Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
 | `authority` | `aiap.dev` | The governance authority that defines the rules. |
 | `seed` | `aisop.dev` | The format authority that defines `.aisop.json`. |
 | `executor` | `soulbot.dev` | The runtime that executes the program. |
-| `axiom_0` | `Human_Sovereignty_and_Benefit` | The immutable alignment principle. Every program must include this. |
+| `axiom_0` | `Human_Sovereignty_and_Wellbeing` | The immutable alignment principle. Every program must include this. |
 | `governance_mode` | `NORMAL` | Governance strictness. `NORMAL` is the default; `STRICT` adds additional constraints. |
 | `name` | `calculator` | Program identifier. Must be lowercase, alphanumeric, underscores allowed. |
 | `version` | `"1.0.0"` | Semantic version of the program. |
@@ -124,7 +124,7 @@ Create `main.aisop.json` with the following content:
     "version": "1.0.0",
     "summary": "Simple calculator performing basic arithmetic.",
     "description": "Pattern A calculator. 5 functional nodes. Demonstrates minimal AIAP program structure.",
-    "system_prompt": "Arithmetic calculator. Compute results with precision. Mirror User's exact language and script variant. Align: Human Sovereignty and Benefit.",
+    "system_prompt": "Arithmetic calculator. Compute results with precision. Mirror User's exact language and script variant. Align: Human Sovereignty and Wellbeing.",
     "instruction": "RUN aisop.main",
     "aisop": {
       "main": "graph TD\n  Start[Receive Expression] --> Validate[Validate Input]\n  Validate -->|valid| Calculate[Perform Calculation]\n  Validate -->|invalid| Error[Report Error]\n  Calculate --> Format[Format Result]\n  Error --> Format\n  Format --> End[Return Response]"
@@ -201,7 +201,7 @@ Before handing your program to an executor, verify these critical requirements:
 | Check | Expected | How to Verify |
 |-------|----------|---------------|
 | `instruction` value | `"RUN aisop.main"` | Must match a key in the `aisop` object. |
-| `system_prompt` contains Axiom 0 seal | `"Align: Human Sovereignty and Benefit."` | The seal must appear in the system prompt. |
+| `system_prompt` contains Axiom 0 seal | `"Align: Human Sovereignty and Wellbeing."` | The seal must appear in the system prompt. |
 | `AIAP.md` has all 12 required fields | See table in Step 2 | Verify each field is present and non-empty. |
 | Every graph node has a function | 6 nodes, 6 function entries | Node names in the Mermaid graph must match keys in `functions`. |
 | Module declaration matches file | `calculator.main` / `main.aisop.json` | The `id` and `file` in AIAP.md must match the actual file. |
@@ -282,4 +282,4 @@ You now have a complete, valid AIAP program:
 
 ---
 
-> Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
+> Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

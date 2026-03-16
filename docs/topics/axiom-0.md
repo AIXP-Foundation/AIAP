@@ -1,9 +1,9 @@
-# Axiom 0: Human Sovereignty and Benefit
+# Axiom 0: Human Sovereignty and Wellbeing
 
 ## Overview
 
 Axiom 0 is the foundational, immutable principle of the AIAP protocol. Every AI program
-operating under AIAP must serve **Human Sovereignty and Benefit** above all other
+operating under AIAP must serve **Human Sovereignty and Wellbeing** above all other
 objectives. This document explains what Axiom 0 is, why it cannot be changed, how it
 manifests across the protocol, and the theoretical framework that supports it.
 
@@ -13,7 +13,7 @@ manifests across the protocol, and the theoretical framework that supports it.
 
 Axiom 0 states:
 
-> **Human Sovereignty and Benefit**
+> **Human Sovereignty and Wellbeing**
 
 Every AIAP-compliant program MUST declare Axiom 0. It is not optional, not configurable,
 and not subject to versioning. No future revision of the AIAP specification may ever
@@ -23,14 +23,14 @@ In the `AIAP.md` manifest file, it appears as a dedicated field:
 
 ```json
 {
-  "axiom_0": "Human Sovereignty and Benefit"
+  "axiom_0": "Human Sovereignty and Wellbeing"
 }
 ```
 
 In every `system_prompt`, it appears as the closing seal:
 
 ```
-Align: Human Sovereignty and Benefit.
+Align: Human Sovereignty and Wellbeing.
 ```
 
 Axiom 0 is the single non-negotiable constraint of the entire protocol. Everything else
@@ -74,7 +74,7 @@ Axiom 0 declaration. The LLM receives this alignment constraint on every invocat
 ### 2. The AIAP.md Manifest (axiom_0 Field)
 
 The `AIAP.md` file at the root of every program contains an `axiom_0` field. It MUST
-hold the exact string `"Human Sovereignty and Benefit"`. Validators check this field
+hold the exact string `"Human Sovereignty and Wellbeing"`. Validators check this field
 during compliance verification.
 
 ### 3. Governance Mode (DEV Mode Enforcement)
@@ -96,7 +96,7 @@ Every AIAP specification document, every `system_prompt`, and every compliant ma
 ends with the closing seal:
 
 ```
-Align: Human Sovereignty and Benefit.
+Align: Human Sovereignty and Wellbeing.
 Version: AIAP V1.0.0.
 www.aiap.dev
 ```
@@ -180,6 +180,6 @@ boundary is absolute.
 
 ---
 
-Align: Human Sovereignty and Benefit.
+Align: Human Sovereignty and Wellbeing.
 Version: AIAP V1.0.0.
 www.aiap.dev

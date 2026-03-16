@@ -66,7 +66,7 @@ These keywords MUST be capitalized when used in their normative sense.
 All specification documents MUST end with:
 
 ```
-Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
+Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
 ```
 
 ## Code of Conduct
@@ -79,4 +79,4 @@ By contributing, you agree that your contributions will be licensed under the Ap
 
 ---
 
-Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
+Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

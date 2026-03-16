@@ -32,4 +32,4 @@ The [aiap.proto](../specification/aiap.proto) file provides the proto3 definitio
 
 ---
 
-> Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
+> Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

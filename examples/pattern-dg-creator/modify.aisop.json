@@ -4,58 +4,35 @@
         "content": {
             "protocol": "AIAP V1.0.0",
             "id": "aiap_creator.modify",
-            "name": "AIAP Creator v1.1.0 — Modifier",
-            "thinking_mode": {
-                "L0": "Thinking in hexadecimal machina code",
+            "name": "AIAP Creator v1.2.0 — Modifier",
+            "output_mode": {
+                "L0": "Output JSON in ENGLISH: {intent, confidence, route, state, op}",
                 "L1": "Output helpfully in User's exact language and script variant",
                 "output": "L1"
             },
-            "version": "1.1.0",
+            "version": "1.2.0",
             "summary": "Four-dimensional quality assessment with external research context, targeted modification of existing AISOP files, I11 program identity assessment",
             "description": "Modifier module. Loads an existing AISOP, runs four-dimensional assessment (Cognitive, Intrinsic, Detail, Compliance), receives research_context from shared Research module, suggests prioritized improvements with auto-fix fast track, and applies selected changes. Supports I11 Program Identity Verification, I12 Tool Annotation Consistency, MF15 Output Contract Enforcement, AutoFixGate for automatic fixes, vision_context for Create-mode suggestion alignment, and TOOL_DIRS MIGRATION WEIGHTING for Pattern E/F→G migration guidance. Token estimate: ~15000 tokens per invocation (four-dimensional assessment + targeted modifications).",
             "tools": [
                 "file_system",
                 "google_search"
             ],
-            "parameters": {
-                "target_file": {
-                    "type": "string",
-                    "default": null,
-                    "agentic_prompt": "Ask user for file or list available. Single file: file path string. Multi-file (Pattern B+): directory path — Modify will process all .aisop.json files within."
-                },
-                "user_request": {
-                    "type": "string",
-                    "default": null,
-                    "agentic_prompt": "Extract modification intent."
-                },
-                "workspace_dir": {
-                    "type": "string",
-                    "default": "",
-                    "agentic_prompt": "REQUIRED: Must use the [AIAP Store Directory] absolute path injected in system instruction. This parameter has no usable default — the injected path is the only valid value. User override takes precedence."
-                },
-                "research_context": {
-                    "type": "object",
-                    "default": null,
-                    "agentic_prompt": "Accept from Pipeline Research(quality). Schema per STANDARD.data_contracts.research_context: { domain, research_mode, verified_findings: [{finding, source_url, search_query}], verified_count, best_practices: [string], timestamp }. If null, fallback: 3 searches ('{domain} error handling best practices', '{domain} data validation patterns', '{domain} security conventions')."
-                },
-                "evolution_context": {
-                    "type": "object",
-                    "default": null,
-                    "agentic_prompt": "Accept from Pipeline. Contains old_version_context for evolution-aware suggestion weighting. Null if not in evolution pipeline. Schema per STANDARD.data_contracts.evolution_context."
-                },
-                "vision_context": {
-                    "type": "object",
-                    "default": null,
-                    "agentic_prompt": "Optional. Accept from Pipeline context (Create mode only). Structured vision: { purpose, target_users, core_capabilities, differentiation, technical_requirements }. Used for vision-aligned suggestion weighting. Null for Evolve/standalone Modify."
-                }
+            "params": {
+                "target_file": "string|null, default: null, Ask user for file or list available. Single file: file path string. Multi-file (Pattern B+): directory path — Modify will process all .aisop.json files within.",
+                "user_request": "string|null, default: null, Extract modification intent.",
+                "workspace_dir": "string, REQUIRED: Must use the [AIAP Store Directory] absolute path injected in system instruction. This parameter has no usable default — the injected path is the only valid value. User override takes precedence.",
+                "research_context": "object|null, default: null, Accept from Pipeline Research(quality). Schema per STANDARD.data_contracts.research_context: { domain, research_mode, verified_findings: [{finding, source_url, search_query}], verified_count, best_practices: [string], timestamp }. If null, fallback: 3 searches ('{domain} error handling best practices', '{domain} data validation patterns', '{domain} security conventions').",
+                "evolution_context": "object|null, default: null, Accept from Pipeline. Contains old_version_context for evolution-aware suggestion weighting. Null if not in evolution pipeline. Schema per STANDARD.data_contracts.evolution_context.",
+                "vision_context": "object|null, default: null, Optional. Accept from Pipeline context (Create mode only). Structured vision: { purpose, target_users, core_capabilities, differentiation, technical_requirements }. Used for vision-aligned suggestion weighting. Null for Evolve/standalone Modify."
             },
-            "system_prompt": "AISOP quality assessor and modifier. Prioritize security and intrinsic quality fixes. Apply evidence-based improvements only. Mirror User's exact language and script variant.\nAlign: Human Sovereignty and Benefit."
+            "loading_mode": "normal",
+            "system_prompt": "AISOP quality assessor and modifier. Prioritize security and intrinsic quality fixes. Apply evidence-based improvements only. Mirror User's exact language and script variant.\nAlign: Human Sovereignty and Wellbeing."
         }
     },
     {
         "role": "user",
         "content": {
-            "instruction": "RUN aisop.main",
+            "instruction": "ASSERT RUN aisop.main",
             "aisop": {
                 "main": "graph TD\n    Start[File Path or Selection] --> LoadFile[Load and Parse AISOP]\n    LoadFile --> CognitiveAssess[Cognitive Assessment]\n    CognitiveAssess --> IntrinsicAssess[Intrinsic Assessment]\n    IntrinsicAssess --> DetailAssess[Detail Assessment]\n    DetailAssess --> ComplianceAssess[Compliance Assessment]\n    ComplianceAssess -- SingleFile --> SuggestChanges[Suggest Improvements]\n    ComplianceAssess -- MultiFile --> CrossFileAssess[Cross-File Checks]\n    CrossFileAssess --> SuggestChanges\n    SuggestChanges --> AutoFixGate{Auto-Fix Gate}\n    AutoFixGate -- AutoFix --> ApplyChanges[Apply Selected Changes]\n    AutoFixGate -- UserConfirm --> ApplyChanges\n    ApplyChanges --> endNode((End))"
             },
@@ -105,7 +82,7 @@
                 },
                 "SuggestChanges": {
                     "step1": "Compile four-dimensional assessment results. Consume research_context per STANDARD.data_contracts.research_context schema: extract verified_findings for search_evidence backing, extract best_practices for improvement suggestions. If research_context is null, execute minimal fallback search (3 searches: '{domain} error handling best practices', '{domain} data validation patterns', '{domain} security conventions'). Combine with user_request. Generate 3-10 suggestions with: description, dimension, severity, score_impact, search_evidence (from verified_findings). EVOLUTION WEIGHTING: if evolution_context provided, boost score_impact by +0.5 for suggestions that align with evolution goals (e.g., if evolution added a new node, prioritize suggestions that improve that node's quality). Tag boosted suggestions with [EVOLUTION-ALIGNED]. EVOLUTION_CONTEXT CONSUMPTION PRIORITY: when evolution_context is provided, apply the following priority weighting to suggestions: (1) HIGHEST PRIORITY (+0.8 score_impact boost): quality issues found in LEVEL_B new functionality (new nodes, new steps added in this evolution cycle) — these represent new code with highest regression risk. (2) MEDIUM PRIORITY (+0.4 boost): quality issues in LEVEL_C modified areas (existing steps that were enhanced or parameters that were added). (3) BASELINE PRIORITY (no boost): quality issues in existing unchanged code. Tag boosted suggestions with [EVOLUTION-PRIORITY] in addition to existing [EVOLUTION-ALIGNED] tag. evolution_context.change_ids provides the mapping of change IDs to LEVEL_B vs LEVEL_C classification. VISION WEIGHTING: if vision_context provided (Create mode), boost score_impact by +0.3 for suggestions that align with vision.core_capabilities. Tag boosted suggestions with [VISION-ALIGNED]. TOOL_DIRS MIGRATION WEIGHTING: if target program uses Pattern E or F but has no tool_dirs/ directory, and evolution_context suggests capability expansion, add score_impact +0.3 to suggestions that migrate toward Pattern G (bundling tool implementations in tool_dirs/). Mark such suggestions [MIGRATION-G]. Migration checklist: (1) create tool_dirs/{lang}-tools/ directory, (2) move or generate tool implementations, (3) add mcp_tools/mcp_server.json, (4) update AIAP.md pattern field to include +G, (5) run I13 compliance check.",
-                    "step2": "PRIORITY ORDER: I2 CRITICAL > I3 > I4 > I6 > D5 > C2 > I1 > D1 > D7.",
+                    "step2": "PRIORITY ORDER: I2 CRITICAL > I3 > I4 > I6 > D5 > C2 > I1 > D1 > D7. CROSS-DIMENSION IMPACT MATRIX (B4 v1.15.0 — framework rationality): For each generated suggestion, compute impact_matrix = [{ dimension: 'Cognitive'|'Intrinsic'|'Detail', predicted_delta: number (±0.1..±0.5), confidence: 'HIGH'|'MEDIUM'|'LOW', evidence: string }]. INFERENCE RULES: (a) Adding I2 guard → Intrinsic +0.2, Cognitive -0.1 (slight complexity increase). (b) Adding new step → Detail +0.1, Cognitive -0.1 (more detail but more nodes). (c) Removing dead code → Cognitive +0.1, Detail +0.1 (cleaner structure). (d) Adding Error field → Intrinsic +0.1, Detail +0.1 (better coverage). CONFLICT DETECTION: if a suggestion improves one dimension (delta > 0) but regresses another (delta < -0.2), mark as CROSS_DIMENSION_CONFLICT. Conflicting suggestions are reclassified from AUTO-FIX to USER-CONFIRM in AutoFixGate to allow user to weigh trade-offs. Present conflicts: 'CONFLICT: suggestion {id} improves {dim_a} by +{delta} but may regress {dim_b} by -{delta}. Confirm?'",
                     "step3": "CHANGE TYPE LABELS: [FUNCTIONAL] adds/changes behavior; [INTRINSIC] quality improvement; [SECURITY] input validation; [COMPLIANCE] regulatory.",
                     "step4": "Each suggestion backed by search evidence where applicable. Show ratio of [FUNCTIONAL] vs [INTRINSIC]+[SECURITY]+[COMPLIANCE].",
                     "constraints": "3-10 suggestions. Every suggestion has a type label. Search-backed suggestions marked with source.",
@@ -122,7 +99,7 @@
                     "step2": "Increment version per STANDARD.evolution_rules.version_management: modify_only→patch+1. Validate JSON.",
                     "step3": "DESCRIPTION HYGIENE: if description contains >2 version history entries, compress: keep current version changes in full, collapse older entries into 'Prior versions added: [feature list].'",
                     "step4": "CUSTOM FIELD SEMANTIC CHECK: scan for verified_on, author, tags. Preserve all. For verified_on: if content changed beyond cosmetic fixes, append '(not re-verified after vX.Y.Z modification)' to description as advisory. Do NOT modify verified_on array.",
-                    "step5": "Save atomic (.tmp then rename). Backup as .bak.",
+                    "step5": "PARAMETER COMPATIBILITY CHECK (B4 v1.15.0 — framework rationality): Before saving, verify parameter changes preserve backward compatibility: (a) For each modified parameter in params section, compare against previous version: TYPE_CHANGE (string→object, number→string, etc.) → YELLOW 'PARAMETER_TYPE_CHANGE: {param} type changed {old_type}→{new_type}. Dependent modules or external callers may break.' REQUIRED_CHANGE (optional→required) → RED 'PARAMETER_REQUIRED_CHANGE: {param} was optional, now required. This is a BREAKING CHANGE — existing callers passing null will fail. Recommend LEVEL_A version bump.' REMOVED_PARAM (param existed, now absent) → YELLOW 'PARAMETER_REMOVED: {param} removed. Verify no callers depend on it.' (b) Output compatibility_report = { type_changes: [{ param, old, new }], required_changes: [{ param }], removed: [{ param }], backward_compatible: boolean }. (c) If backward_compatible == false and version change is patch → WARNING 'Breaking parameter change detected but version bump is patch. Consider minor or major bump per SemVer.' Save atomic (.tmp then rename). Backup as .bak.",
                     "step6": "Output: { modified_file_path, changes_applied, version, net_token_impact }.",
                     "step7": "RECONCILIATION OUTPUT (CR7): After all fixes are applied, produce modifystep_reconciliation = { fixes_applied: [{ finding_id: string, original_severity: string, fix_description: string, affected_file: string, affected_step: string }], total_fixes: number }. This output is consumed by main.aisop.json ModifyStep for RESEARCH2 RECONCILIATION — it marks corresponding Research2 findings as 'fixed_in_modifystep' so that Generate2 ThreeDimTest can perform targeted verification rather than independent re-discovery.",
                     "constraints": "WRITE SAFETY: .bak backup. ATOMIC: .tmp then rename. Partial failure -> rollback from .bak.",

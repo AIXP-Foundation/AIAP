@@ -14,7 +14,7 @@ AIAP defines how AI programs should be built, tested, and trusted. Every AIAP pr
 - **.aisop.json files** --- Machine-readable blueprints with execution graphs, step-based functions, and security constraints.
 - **ThreeDimTest validation** --- Quality checks across three dimensions: Correctness, Intrinsic quality, and Detail compliance.
 
-The protocol is anchored by **Axiom 0: Human Sovereignty and Benefit** --- an immutable principle that no version of AIAP may weaken or remove.
+The protocol is anchored by **Axiom 0: Human Sovereignty and Wellbeing** --- an immutable principle that no version of AIAP may weaken or remove.
 
 ---
 
@@ -80,4 +80,4 @@ AIAP is an open protocol. Contributions are welcome:
 
 ---
 
-> Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
+> Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

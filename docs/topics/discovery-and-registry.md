@@ -303,6 +303,6 @@ Federated queries carry a provenance chain indicating which registries contribut
 AIAP_SEAL: AIAP/1.0
 Document: discovery-and-registry
 Type: Conceptual Guide
-Axiom_0: Human Sovereignty and Benefit
+Axiom_0: Human Sovereignty and Wellbeing
 Status: ACTIVE
 ```

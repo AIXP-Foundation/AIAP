@@ -19,7 +19,7 @@ The origin of the format.
 The source of governance and the steward of Axiom 0.
 
 - **Responsibility**: Maintains the `AIAP_Protocol.md` structural specification, the `AIAP_Standard.*.aisop.json` quality gates, and enforces the Zero-Entropy and L0 isolation rules.
-- **Philosophy**: Rigorous, uncompromising. Ensures that all compliant intelligence adheres to "Human Sovereignty and Benefit."
+- **Philosophy**: Rigorous, uncompromising. Ensures that all compliant intelligence adheres to "Human Sovereignty and Wellbeing."
 - **License**: Apache 2.0 — providing patent protection for the governance layer.
 
 ### 3. The Executor Layer (`soulbot.dev`)
@@ -32,9 +32,9 @@ The reference runtime environment.
 
 ## Axiom 0 Immutability
 
-**Axiom 0: "Human Sovereignty and Benefit" is immutable.**
+**Axiom 0: "Human Sovereignty and Wellbeing" is immutable.**
 
-No major, minor, or patch release of the AIAP protocol may ever modify, weaken, or deprecate the core alignment to Human Sovereignty and Benefit. This constraint is absolute and non-negotiable.
+No major, minor, or patch release of the AIAP protocol may ever modify, weaken, or deprecate the core alignment to Human Sovereignty and Wellbeing. This constraint is absolute and non-negotiable.
 
 Any protocol change request that is determined to compromise, dilute, or bypass Axiom 0 will be rejected regardless of performance benefits, commercial pressure, or technical convenience.
 
@@ -74,4 +74,4 @@ The AIAP protocol is maintained by the AIAP Protocol Organization across the thr
 
 ---
 
-Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
+Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

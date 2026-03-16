@@ -39,7 +39,7 @@ AIAP introduces a small vocabulary. Here is a quick reference table for the term
 | **AISOP** | AI Standard Operating Procedure | The file format (`.aisop.json`) that defines an AI program's execution graph, functions, and constraints. |
 | **AIAP** | AI Application Protocol | The overarching protocol that defines rules for structure, quality, security, and alignment. |
 | **AIAP.md** | Governance Contract | A Markdown front-matter file that declares metadata, modules, tools, trust level, and governance mode for a program. |
-| **Axiom 0** | Human Sovereignty and Benefit | The immutable alignment principle. Every AIAP program must serve human interests and never undermine human control. |
+| **Axiom 0** | Human Sovereignty and Wellbeing | The immutable alignment principle. Every AIAP program must serve human interests and never undermine human control. |
 | **Pattern A** | Single-Module | The simplest architecture: one `.aisop.json` file with up to 12 functional nodes. |
 | **Pattern B** | Multi-Module Router | A stateless NLU router that dispatches to specialized modules. |
 | **Pattern C** | Shared-Logic | Adds cross-module shared utilities (e.g., logging, i18n). |
@@ -102,10 +102,10 @@ AIAP is an open protocol. If you have questions or want to contribute:
 
 ## Summary
 
-AIAP gives AI programs a governance layer. Instead of shipping raw prompts, you ship a verified blueprint with deterministic execution graphs, declared tools, and quality guarantees. Every program carries Axiom 0 --- the immutable commitment to Human Sovereignty and Benefit.
+AIAP gives AI programs a governance layer. Instead of shipping raw prompts, you ship a verified blueprint with deterministic execution graphs, declared tools, and quality guarantees. Every program carries Axiom 0 --- the immutable commitment to Human Sovereignty and Wellbeing.
 
 Start small with Pattern A. Grow into Pattern B when you need multiple intents. Add security guards, quality checks, and trust declarations as your program matures. The protocol scales with you.
 
 ---
 
-> Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
+> Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

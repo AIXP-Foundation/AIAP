@@ -141,4 +141,4 @@ Rule I8 requires that each program documents which threats apply and how they ar
 | None | No threat documentation | Not acceptable for any trust level |
 
 ---
-Align: Human Sovereignty and Benefit | Protocol: AIAP | Seed: AISOP | Executor: SoulBot
+Align: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot

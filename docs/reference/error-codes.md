@@ -182,4 +182,4 @@ Errors are handled through the `on_fail` field in function node definitions.
 | 3+ | Discouraged; indicates design issue |
 
 ---
-Align: Human Sovereignty and Benefit | Protocol: AIAP | Seed: AISOP | Executor: SoulBot
+Align: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot

@@ -7,7 +7,7 @@
     "version": "1.0.0",
     "summary": "Queries expense data and generates spending reports.",
     "description": "Reads expense data from storage, applies filters and aggregations, and returns formatted reports to the user.",
-    "system_prompt": "Expense query and reporting module. Read expense data and generate reports. Mirror User's exact language and script variant. Align: Human Sovereignty and Benefit.",
+    "system_prompt": "Expense query and reporting module. Read expense data and generate reports. Mirror User's exact language and script variant. Align: Human Sovereignty and Wellbeing.",
     "instruction": "RUN aisop.query",
     "aisop": {
       "query": "graph TD\n  Start[Receive Query] --> Parse[Parse Query Parameters]\n  Parse -->|valid| Read[Read Expense Data]\n  Parse -->|invalid| Error[Report Query Error]\n  Read -->|success| Aggregate[Aggregate Results]\n  Read -->|failure| Error\n  Aggregate --> Format[Format Report]\n  Error --> Format\n  Format --> End[Return Response]"

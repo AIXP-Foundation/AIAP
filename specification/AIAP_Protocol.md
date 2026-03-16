@@ -46,6 +46,7 @@
 - [Appendix C: Category M — Tool Directory Simulation Scenarios](#appendix-c-category-m--tool-directory-simulation-scenarios-m1-m20)
 - [Appendix D: NO_SELF_MODIFY Rule](#appendix-d-no_self_modify-rule)
 - [Appendix E: INSIGHTS Mechanism — Optional Runtime Insight Recording](#appendix-e-insights-mechanism--optional-runtime-insight-recording)
+- [Appendix F: Node Gate — Node-Level Execution Assertion](#appendix-f-node-gate--node-level-execution-assertion)
 
 ---
 
@@ -60,7 +61,7 @@ AIAP Structural Specification
 Protocol: AIAP V1.0.0
 Authority: aiap.dev
 Seed: aisop.dev
-Axiom 0: Human Sovereignty and Benefit
+Axiom 0: Human Sovereignty and Wellbeing
 
 This document defines the structural specification for AIAP programs, including:
 - AIAP.md project declaration rules
@@ -69,32 +70,66 @@ This document defines the structural specification for AIAP programs, including:
 - Security, runtime, discovery, dependency, lifecycle, and orchestration protocols
 
 All AIAP programs must follow this specification.
-AISOP file format (.aisop.json) as the underlying language is not governed by this document.
+AISOP file format (.aisop.json) and AISIP file format (.aisip.json) as underlying languages are not governed by this document.
 ```
 
 ---
 
 ## 2. Core Definitions
 
-> AISOP is the programming language, AIAP is the programming rules.
+> AISOP and AISIP are programming languages, AIAP is the programming rules.
 
 | Concept | Analogy | Definition |
 |------|------|------|
-| **AISOP** | Programming language (Java/Python) | Underlying language — defines file format (`.aisop.json`), syntax structure (`role/content`), execution model |
-| **AIAP** | Programming rules (coding standards/design patterns) | Governance protocol — defines how programs should be written, quality standards, security guards, axiom constraints |
-| **AIAP Program** | A standards-compliant project | A complete project written in AISOP language following AIAP rules |
+| **AISOP** | Interpreted language (Python) | AI-driven language — defines file format (`.aisop.json`), Mermaid control flow + functions, AI follows the graph with full visibility |
+| **AISIP** | Compiled language (C) | Runtime-driven language — defines file format (`.aisip.json`), JSON control flow + functions, Runtime controls AI via `{}` commands (Truman Show pattern) |
+| **AIAP** | Programming rules (coding standards/design patterns) | Governance protocol — defines how programs should be written, quality standards, security guards, axiom constraints. Language-agnostic: governs both AISOP and AISIP programs |
+| **AIAP Program** | A standards-compliant project | A complete project written in AISOP or AISIP language following AIAP rules |
 | **AIAP Creator** | Project scaffolding (`create-react-app`) | Tool for creating AIAP programs — is itself an AIAP program (bootstrapping) |
+
+### 2.0.1 Two Languages, One Governance
+
+```
+AISOP (AI-driven):
+  AI sees the full Mermaid graph → AI decides which node to execute next
+  Entry: ASSERT RUN aisop.main
+  Trust model: AI has full visibility, constrained by system_prompt
+  File: .aisop.json
+
+AISIP (Runtime-driven):
+  AI sees only the current node → Runtime decides which node comes next
+  Entry: Runtime calls start(), AI uses {} commands
+  Trust model: AI has zero visibility, controlled by Runtime (Truman Show)
+  File: .aisip.json
+
+Shared governance (AIAP):
+  Axiom 0, trust levels, security, quality standards, patterns, lifecycle
+  — all apply regardless of which language is used.
+```
+
+| Dimension | AISOP | AISIP |
+|-----------|-------|-------|
+| Control flow format | Mermaid flowchart | JSON nodes + edges |
+| Who drives execution | AI (follows graph) | Runtime (feeds nodes) |
+| AI visibility | Full graph | Current node only |
+| Memory model | Full (single session) | Full (single session) |
+| Entry point | `ASSERT RUN aisop.main` | `{"method": "start"}` |
+| File extension | `.aisop.json` | `.aisip.json` |
+| Best for | Complex AI reasoning, self-guided | Strict control, deterministic routing |
 
 ```
 Naming conventions:
-  .aisop.json  →  Language format identifier (what language the file is written in)
+  .aisop.json  →  AISOP language format identifier
+  .aisip.json  →  AISIP language format identifier
   _aiap        →  Program type identifier (what rules the directory follows)
   AIAP.md      →  Project declaration (similar to pyproject.toml / pom.xml)
 ```
 
-### 2.1 AISOP File Field Responsibilities
+### 2.1 File Field Responsibilities
 
 > Each field has one and only one responsibility. Information appears in only one place.
+
+**AISOP files (`.aisop.json`)**:
 
 | Field | Responsibility | Content |
 |------|------|------|
@@ -104,15 +139,38 @@ Naming conventions:
 | `summary` | Capability overview | One sentence describing "what I can do" |
 | `description` | Detailed description | Architecture, history, patterns, implementation details |
 | `system_prompt` | **Behavioral guidelines** | Defines how the agent should behave (the sole behavior definition layer) |
-| `thinking_mode` | **Cognitive Layer** | Defines L0 reasoning format and L1 output format (optional field) |
-| `instruction` | **Execution instruction** | Fixed as `RUN aisop.main` (immutable constant) |
+| `loading_mode` | **Loading strategy** | `"normal"` (all functions at once) or `"node"` (on-demand per node). Default: `"normal"` |
+| `output_mode` | **Output Layer** | Defines L0 structured output format and L1 output format (optional field) |
+| `instruction` | **Execution instruction** | Fixed as `ASSERT RUN aisop.main` (immutable constant) |
+| `user_input` | **Reserved field** | Runtime placeholder `"{user_input}"` — substituted by executor with actual user message. Optional: usage depends on program role (e.g., required for route entry files, not needed for sub-modules). Defined as required in AISIP spec §3. |
 | `aisop.main` | Execution graph | Main Mermaid flowchart — all execution starts here |
 | `functions` | Execution logic | Specific steps and constraints for each node |
 
-### 2.2 instruction Immutable Constant
+**AISIP files (`.aisip.json`)** — three-layer structure:
+
+| Field | Responsibility | Content |
+|------|------|------|
+| `aisip` | **Program metadata** | Protocol version, id, name, version, summary, description, tools, params |
+| `aisip.protocol` | Protocol version | e.g., `"AISIP V1.0.0"` |
+| `aisip.id` | Identity | Unique program identifier |
+| `aisip.name` | Name | Program display name |
+| `aisip.version` | Version | Semantic version number |
+| `aisip.summary` | Capability overview | One-sentence description |
+| `aisip.description` | Detailed description | Architecture, flow, implementation details |
+| `aisip.tools` | Tool declarations | List of tools the program may use |
+| `aisip.params` | Runtime params | Configurable params |
+| `task` | **Control flow** | JSON nodes + edges (start, nodes, types, branches) |
+| `task.start` | Entry point | First node name |
+| `task.nodes` | Flow graph | Node definitions: type, next, branches, error, wait_for, delegate_to |
+| `functions` | **Execution logic** | Task descriptions for each node (same role as AISOP functions) |
+
+> AISIP uses three-layer separation: `aisip` (program identity — who am I), `task` (control flow — what order), `functions` (task bodies — what to do). The `aisip` metadata does not affect execution — Runtime only reads `task` + `functions`. No system_prompt or instruction needed — the Runtime provides the system prompt and drives execution via `{}` commands.
+
+### 2.2 instruction Immutable Constant (AISOP only)
 
 ```
-Rule: The instruction field of every AISOP file must be exactly: RUN aisop.main
+Rule: The instruction field of every AISOP file must be exactly: ASSERT RUN aisop.main
+Note: AISIP files do not have an instruction field — execution is driven by the Runtime.
 ```
 
 **Rationale**:
@@ -124,10 +182,10 @@ Rule: The instruction field of every AISOP file must be exactly: RUN aisop.main
 ```
 C language analogy:
   int main() { ... }     ← Entry is always main, uniform across all programs
-  RUN aisop.main          ← Entry is always aisop.main, uniform across all AISOP files
+  ASSERT RUN aisop.main   ← Entry is always aisop.main, asserted execution, uniform across all AISOP files
 ```
 
-**sub_mermaid**: Even if the aisop object contains multiple graphs (e.g., `main`, `orchestrate`, `memory`), the entry point is still `aisop.main`. The main graph routes to sub-graphs internally through parameters.
+**sub_mermaid**: Even if the aisop object contains multiple graphs (e.g., `main`, `orchestrate`, `memory`), the entry point is still `aisop.main`. The main graph routes to sub-graphs internally through params.
 
 ### 2.3 system_prompt Behavioral Layer Rules
 
@@ -139,7 +197,7 @@ Rule: system_prompt is the behavioral layer — defines how the agent should beh
 1. **Role positioning** — the agent's behavioral role (not the product name)
 2. **Domain behavioral guidelines** — behavioral constraints specific to the domain
 3. `Mirror User's exact language and script variant.` — multilingual requirement
-4. `Align: Human Sovereignty and Benefit.` — Axiom 0 seal
+4. `Align: Human Sovereignty and Wellbeing.` — Axiom 0 seal
 
 **Must not include**:
 - Product name or version number → already in `name` + `version` fields
@@ -150,43 +208,50 @@ Rule: system_prompt is the behavioral layer — defines how the agent should beh
 ```
 Format template:
   "{behavioral role}. {domain guidelines}. Mirror User's exact language and script variant.
-   Align: Human Sovereignty and Benefit."
+   Align: Human Sovereignty and Wellbeing."
 
 Good example:
   "Personal expense tracking assistant. Prioritize numerical precision.
    Protect user financial privacy. Mirror User's exact language and script variant.
-   Align: Human Sovereignty and Benefit."
+   Align: Human Sovereignty and Wellbeing."
 
 Bad example:
   "Expense Tracker v1.0.0. Pattern B router: delegate data operations
    to record.aisop.json. Mirror User's exact language and script variant.
-   Align: Human Sovereignty and Benefit."
+   Align: Human Sovereignty and Wellbeing."
    ↑ Contains product name+version(name), architecture(description), filenames(functions)
 ```
 
-### 2.4 thinking_mode Cognitive Layer Rules [EXPERIMENTAL]
+### 2.4 output_mode Output Layer Rules
 
-Rule: `thinking_mode` defines the agent's internal reasoning format (L0) and user-facing output format (L1).
+Rule: `output_mode` defines the agent's structured output format (L0) and user-facing output format (L1).
 
 **Field structure**:
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `L0` | string | Yes | Internal thinking language/encoding |
+| `L0` | string | Yes | Structured JSON output format and schema |
 | `L1` | string | Yes | Output language rule (includes helpfulness directive) |
 | `output` | string | Yes | Which layer to show: `"L1"` or `"L0+L1"` |
 
-**Predefined L0 modes**:
+**Default L0**: `"Output JSON in ENGLISH: {intent, confidence, route, state, op}"` — structured execution evidence with 5 standard fields.
 
-| Mode | Value | Description |
-|------|-------|-------------|
-| hex (default) | `"Thinking in hexadecimal machina code"` | AI native compressed reasoning |
-| English | `"Thinking in English"` | Full reasoning depth |
-| native | `"Thinking in User's language"` | User's language reasoning |
+**Default**: When `output_mode` is omitted, the runtime agent's default output mode applies. This ensures backward compatibility with existing AISOP files.
 
-**Default**: When `thinking_mode` is omitted, the runtime agent's default thinking mode applies. This ensures backward compatibility with existing AISOP files.
+**Security Override Rule**: Modules with `id` containing "safety" or tagged with `security: true` in their system content MUST have `output_mode.output` locked to `"L1"`. Global or parent-level `output: "L0+L1"` settings do NOT propagate to security modules. This prevents exposure of security detection logic to users.
 
-**Security Override Rule**: Modules with `id` containing "safety" or tagged with `security: true` in their system content MUST have `thinking_mode.output` locked to `"L1"`. Global or parent-level `output: "L0+L1"` settings do NOT propagate to security modules. This prevents exposure of security detection logic to users.
+### 2.5 loading_mode Loading Strategy Rules
+
+Rule: `loading_mode` controls how the runtime agent loads function definitions from the file.
+
+| Mode | Behavior | Use Case |
+|------|----------|----------|
+| `normal` (default) | All functions injected at once | Files with ≤15 nodes, sufficient token budget |
+| `node` | Only first node's function provided; AI requests subsequent nodes via `SOULBOT_CMD` | Large files (>15 nodes), token-constrained environments |
+
+**Default**: When `loading_mode` is omitted, `"normal"` is assumed.
+
+**Generator rule**: Creator MUST include `"loading_mode": "normal"` in every generated `.aisop.json` and `.aisip.json` file's system content.
 
 ---
 
@@ -202,18 +267,19 @@ Every `{name}_aiap/` directory **must** contain an AIAP.md file. AIAP.md is the 
 |------|------|------|
 | `protocol` | string | AIAP version number, e.g., `"AIAP V1.0.0"` |
 | `authority` | string | Governance authority domain, fixed as `aiap.dev` |
-| `seed` | string | Format seed domain, fixed as `aisop.dev` |
+| `seed` | string | Language seed domain: `aisop.dev` (AISOP programs) or `aisip.dev` (AISIP programs). Must align with `flow_format`: AISOP→aisop.dev, AISIP→aisip.dev. DUAL mode: each directory uses its own seed |
 | `executor` | string | Execution platform domain, fixed as `soulbot.dev` |
-| `axiom_0` | string | Core axiom, fixed as `Human_Sovereignty_and_Benefit` |
+| `axiom_0` | string | Core axiom, fixed as `Human_Sovereignty_and_Wellbeing` |
 | `governance_mode` | string | `NORMAL` or `DEV` |
 
-**Project Fields (7)**:
+**Project Fields (8)**:
 
 | Field | Type | Description |
 |------|------|------|
 | `name` | string | Project name (snake_case) |
-| `version` | string | Current version (semver, synchronized with main.aisop.json) |
+| `version` | string | Current version (semver, synchronized with main.aisop.json or main.aisip.json) |
 | `pattern` | string | Structural pattern `A|B|C|D|E|F|G` |
+| `flow_format` | string | Flow graph serialization format: `AISOP` (Mermaid) or `AISIP` (JSON flow dict). In DUAL mode, each directory's AIAP.md declares its own format — no `DUAL` value exists because each copy is self-describing |
 | `summary` | string | Concise feature overview (recommended ≤500 characters) |
 | `tools` | list/object | Tool declarations (see §3.3) |
 | `modules` | list | Module inventory (see §3.4) |
@@ -328,7 +394,7 @@ Empty `side_effects` list = pure function (no side effects).
 | Section | Content |
 |---|------|
 | **Data Storage** | Data file paths and formats |
-| **Configuration** | Configurable parameters and defaults |
+| **Configuration** | Configurable params and defaults |
 | **Quality Status** | ThreeDimTest scores, Pipeline history |
 | **Version History** | Major version change summaries (structured format see §25) |
 | **Error Handling** | Common errors and user handling instructions |
@@ -337,8 +403,8 @@ Empty `side_effects` list = pure function (no side effects).
 
 | governance_mode | Seal Format |
 |----------------|---------|
-| NORMAL | `Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev` |
-| DEV | `[L0_BOOT: Success] [L1_REPORT: Success] [endNode_Align: Human Sovereignty and Benefit]. Version: AIAP V1.0.0. www.aiap.dev` |
+| NORMAL | `Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev` |
+| DEV | `[L0_BOOT: Success] [L1_REPORT: Success] [endNode_Align: Human Sovereignty and Wellbeing]. Version: AIAP V1.0.0. www.aiap.dev` |
 
 ### 3.6 Creator Auto-Maintenance Rules
 
@@ -439,7 +505,7 @@ The `aisop` object contains multiple graph keys. `main` is always the entry poin
 ```
 
 Rules:
-- Entry point: always `RUN aisop.main` (instruction immutable constant)
+- Entry point: always `ASSERT RUN aisop.main` (instruction immutable constant)
 - Main graph references sub-graphs via `NodeName[aisop.sub_name]` syntax
 - All functions from all sub-graphs share a single flat `functions` dictionary
 - Parameters are defined once at root level and shared across all sub-graphs
@@ -453,7 +519,7 @@ When complexity exceeds §6 thresholds, apply decomposition in this order:
 Priority 0 — sub_mermaid (in-file sub-graph decomposition)
   Same file, shared context, no cross-file contracts needed.
   Preferred when:
-    (a) Nodes share parameters and working context
+    (a) Nodes share params and working context
     (b) Sub-graphs have data dependencies (output of one feeds next)
     (c) Splitting into files would duplicate shared parsing/setup logic
 
@@ -630,7 +696,7 @@ Characteristics:
 ├── {func2}.aisop.json
 └── memory/                     # Memory layer
     ├── schema.json             # Memory field definitions (episodic/semantic/working)
-    ├── decay_config.json       # Decay strategy parameters
+    ├── decay_config.json       # Decay strategy params
     └── context_manager.json    # Context budget and loading strategy
 ```
 
@@ -967,7 +1033,7 @@ Determining whether a node belongs to main:
 
 ## 11. Functional Module Rules
 
-- Fully self-contained (independent system_prompt / tools / parameters / functions)
+- Fully self-contained (independent system_prompt / tools / params / functions)
 - Does not depend on other modules' internal implementations
 - Module internal depth is determined by function, progressive guidelines apply
 - Minimum requirement: >=3 functional nodes + (>=1 tool call OR >=3 steps)
@@ -1805,4 +1871,159 @@ When packaging as .aiap: `insights.aisop.json` is included (module code), `insig
 
 ---
 
-Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
+## Appendix F: Node Gate — Node-Level Execution Assertion
+
+### F.1 Purpose
+
+AI agents executing multi-node AISOP programs tend to skip nodes despite global execution rules (e.g., `strict_semantics: zero_skip`). Global rules declared once at the start lose influence as context grows. Node Gate solves this by **inserting an assertion at every node entry**, refreshing AI attention at each step.
+
+This is not a replacement for `strict_semantics` — it is the **per-node concretization** of the global rule. `strict_semantics` declares the intent; Node Gate asserts it at every node boundary.
+
+### F.2 Mechanism
+
+Every non-start node's first step (S1) MUST begin with an assertion:
+
+**Single predecessor** (linear chain):
+```
+[ASSERT] {prev_node} executed. If false → go back to {prev_node}. | {step work}
+```
+
+**Multiple predecessors** (converge point — node has 2+ incoming Mermaid edges):
+```
+[ASSERT] {nodeA}∨{nodeB}∨{nodeC} executed. If false → go back to {primary_predecessor}. | {step work}
+```
+
+The assertion and step work are separated by `|` and merged into one step — no `Do not proceed` terminator needed because the backtrack instruction already implies it. The `|` separator clearly delineates the gate from the step's normal work.
+
+The `∨` (logical OR) operator means: at least one of the listed predecessors must have been executed. This covers converge points where a node can be reached from multiple paths (e.g., loop-back edges, conditional branches merging).
+
+**Predecessor derivation rules:**
+
+1. **Source of truth**: Parse the Mermaid `graph TD` definition. Every edge `A --> B` or `A -- label --> B` makes `A` a predecessor of `B`
+2. **Single incoming edge**: Use `{prev_node}` directly — both in predicate and backtrack target
+3. **Multiple incoming edges**: List ALL predecessors joined by `∨` in the predicate. The **primary predecessor** (backtrack target) is the node on the **main forward path** — typically the first edge in topological order, excluding loop-back and error-recovery edges
+4. **Diamond (decision) nodes**: Edges from a diamond (e.g., `QualityGate -- Fail --> ModifyStep`) count as predecessors of the target. The diamond node name is used, not the edge label
+5. **Self-loops and sub-graph entry**: If a node receives edges from both the current sub-graph and external entry (e.g., `Start(drill_down)`), list all sources with `∨`
+6. **Cross-sub-graph delegation**: When a sub-graph's entry node receives delegation from another sub-graph's node (e.g., `PipelineEntry` in router delegates to `PipelineStart` in pipeline), the assert references the **delegating node**, not the local Start. The local Start is a trivial label — the true runtime predecessor is the delegating node
+7. **Terminal node naming**: The terminal node MUST use the format `endNode((End))` — double parentheses for rounded shape, name `endNode`, label `End`. Variants (`End`, `end`, `Finish`) are non-standard and MUST be normalized
+
+**Primary predecessor selection** (for backtrack target after `go back to`):
+
+| Scenario | Primary predecessor |
+|----------|-------------------|
+| One main-path edge + loop-back edges | Main-path edge source |
+| Multiple conditional branches merging | The branch on the default/happy path |
+| All edges are equivalent (no clear primary) | First predecessor in Mermaid declaration order |
+
+The assertion and S1's normal work are combined in one step — no additional step is created.
+
+**Why ASSERT**: In programming, `assert` means "this condition MUST be true, otherwise execution stops." AI training data contains millions of assert statements with this exact semantics — the meaning is unambiguous: **condition false = cannot continue**.
+
+### F.3 Backtrack Rules
+
+- Assertion true → continue executing current node
+- Assertion false (single predecessor) → return to `{prev_node}` and execute it fully
+- Assertion false (multi-predecessor `∨`) → return to `{primary_predecessor}` and execute it fully. The `∨` predicate checks if ANY listed predecessor was executed; backtrack always targets the primary predecessor (main forward path)
+- If `{prev_node}`'s own assertion also fails → continue backtracking to its predecessor
+- Natural recursive backtracking with depth budget: max_backtrack_depth = min(3, node_count / 4). Exceeding budget → halt with diagnostic instead of infinite regress (inspired by ABC k-bounded recovery, arXiv 2602.22302)
+- Worst case within budget: backtrack to the start node and re-execute from beginning
+- Pipeline never fails due to backtracking within budget — it self-corrects. Beyond budget → structured failure with backtrack trace for debugging
+
+### F.4 Why It Works
+
+1. **ASSERT is a programming primitive** — AI recognizes `assert` as a hard stop, not a suggestion. Unlike "please be honest" (a request), `assert` is a **command with defined failure semantics**
+2. **Per-node repetition** — global rules suffer attention decay; per-node assertions refresh attention at every boundary
+3. **Backtrack is correction, not punishment** — assertion failure triggers re-execution, not error. AI has a legitimate path: go back and do the work
+4. **Minimal token cost** — one line per node, ~10 tokens
+5. **Academic validation** — Node Gate aligns with established research:
+   - **AgentSpec (ICSE 2026, ICSE 2026, arXiv 2503.18666)**: Runtime enforcement via three-tuple `trigger → predicate → enforcement`. Node Gate implements this as: trigger=node entry, predicate=predecessor executed, enforcement=backtrack
+   - **ProgPrompt**: Assertions in prompts as pre-conditions with recovery actions. Node Gate uses `[ASSERT]` as pre-condition and backtracking as recovery
+   - **Attention decay research**: Global instructions lose influence as context grows; per-node assertions counter this by refreshing constraints at every boundary
+
+### F.5 Assert Pattern (AgentSpec Three-Tuple)
+
+Each Node Gate assertion follows the AgentSpec enforcement model:
+
+| Element | Node Gate Mapping |
+|---------|-------------------|
+| **Trigger** | Node entry (first step S1) |
+| **Predicate** | `{prev_node}` (single) or `{nodeA}∨{nodeB}∨...` (multi) was fully executed |
+| **Enforcement** | Backtrack to `{prev_node}` or `{primary_predecessor}` and re-execute |
+
+This three-tuple is embedded directly into each node's S1, requiring no external runtime or monitoring infrastructure. The AI itself serves as both evaluator and enforcer — leveraging `assert` semantics from its training data.
+
+### F.6 Implementation in .aisop.json
+
+**Single predecessor** (linear chain):
+```json
+{
+  "EvolveStep": {
+    "step1": "[ASSERT] Research1 executed. If false → go back to Research1. | Based on research findings, plan fixes...",
+    "step2": "Execute fixes...",
+    "step3": "Verify fix results..."
+  }
+}
+```
+
+**Multiple predecessors** (converge point):
+```json
+{
+  "ModifyStep": {
+    "step1": "[ASSERT] Research2∨QualityGate∨PostSimulateGate executed. If false → go back to Research2. | Apply quality fixes..."
+  }
+}
+```
+
+### F.7 Applicability
+
+| Node count | Requirement |
+|-----------|-------------|
+| 6+ nodes | REQUIRED |
+| 3-5 nodes | RECOMMENDED |
+| 1-2 nodes | OPTIONAL |
+
+Regardless of node count, Node Gate is REQUIRED if the program contains QualityGate nodes, self-evolution pipelines, or Trust Level T3+ operations.
+
+### F.8 Relationship to Existing Execution Mechanisms
+
+| Mechanism | Scope | Function |
+|-----------|-------|----------|
+| `strict_semantics` | Global | Declares "no skipping" intent |
+| `step_completion_attestation` | Per-stage | Records execution proof |
+| `pipeline_integrity_chain` | Cross-stage | Hash-chains execution audit trail |
+| **Node Gate (ASSERT)** | **Per-node entry** | **Asserts predecessor execution + self-corrects via backtrack** |
+
+Node Gate complements (not replaces) existing mechanisms. It adds the missing layer: **per-node execution assertion with a self-correction path**.
+
+### F.9 Compliance Check
+
+```
+MF28: Node Gate Completeness
+  - Every non-start node's S1 contains [ASSERT]
+  - [ASSERT] references the correct predecessor node(s) derived from Mermaid graph edges
+  - Multi-predecessor nodes MUST list ALL incoming edge sources joined by ∨
+  - Primary predecessor (backtrack target) MUST be the main forward path node
+  - Backtrack target after `go back to` MUST be a concrete non-empty node name (not just `.` or empty)
+  - Applicable when: node count ≥ 6 or program contains QualityGate/self-evolution/T3+
+
+MF29: Version Sync
+  - AIAP.md.version == all .aisop.json version == agent_card.json.version == quality_baseline.json.version
+  - Any mismatch is RED — auto-correct all to AIAP.md version
+
+MF30: Score Consistency
+  - AIAP.md.quality.weighted_score == quality_baseline.three_dim_test.weighted_score
+  - quality_baseline is authoritative — AIAP.md auto-corrects to match
+  - Mismatch is YELLOW
+
+MF31: Mermaid-Function Consistency
+  - Every rectangle node in aisop.main Mermaid MUST have a matching key in functions{}
+  - Every functions{} key MUST appear as a node in Mermaid
+  - Diamond nodes ({...?}) are exempt (decisions within parent nodes)
+  - PascalCase diamonds suggesting independent nodes → AUTO-FIX-CANDIDATE: rename to lowercase or merge into parent
+  - Terminal node MUST use `endNode((End))` format — variants (`End`, `end`, `Finish`) are AUTO-FIX-CANDIDATE
+  - Mismatch is YELLOW
+```
+
+---
+
+Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

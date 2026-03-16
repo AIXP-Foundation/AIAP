@@ -5,14 +5,15 @@ protocol: "AIAP V1.0.0"
 authority: aiap.dev
 seed: aisop.dev
 executor: soulbot.dev
-axiom_0: Human_Sovereignty_and_Benefit
+axiom_0: Human_Sovereignty_and_Wellbeing
 governance_mode: NORMAL
 
-# Project Fields (7 required)
+# Project Fields (8 required)
 name: aiap_creator
-version: "1.1.0"
+version: "1.2.0"
 pattern: D+G
-summary: "AIAP Creator — reference implementation for creating, evolving, validating, simulating, and managing AIAP programs via a 15-stage pipeline. 13 modules, 171 nodes, 301 scenarios (A-X). Features: ThreeDimTest (MF1-MF27), PL28 self-observation with PostExecution convergence, INSIGHTS lifecycle management, EVOLVE CAP, dry-run preview, AutoFixEngine, CREATE mode enhancements. Pattern D+G, Grade S/4.899."
+flow_format: "AISOP"
+summary: "AIAP Creator — reference implementation for creating, evolving, validating, simulating, and managing AIAP programs via a 15-stage pipeline. 14 modules, 207 nodes, 643 scenarios (A-Z, AA). Features: ThreeDimTest (MF1-MF38), EVOLVE CAP with adaptive complexity, governance integrity sync, quality history archival, stage cache chain verification, AISOP/AISIP/DUAL support, format conversion, protocol alignment (MCP/A2A). Pattern D+G, Grade S."
 tools:
   - name: file_system
     required: true
@@ -40,84 +41,96 @@ tools:
 modules:
   - id: aiap_creator.main
     file: main.aisop.json
-    nodes: 28
+    nodes: 32
     critical: true
     idempotent: false
     side_effects: [file_write]
   - id: aiap_creator.generate
     file: generate.aisop.json
-    nodes: 21
+    nodes: 29
     critical: true
     idempotent: false
     side_effects: [file_write]
   - id: aiap_creator.research
     file: research.aisop.json
-    nodes: 15
+    nodes: 17
     critical: false
     idempotent: true
     side_effects: []
   - id: aiap_creator.modify
     file: modify.aisop.json
-    nodes: 9
+    nodes: 11
     critical: true
     idempotent: false
     side_effects: [file_write]
   - id: aiap_creator.review
     file: review.aisop.json
-    nodes: 11
+    nodes: 13
     critical: true
     idempotent: false
     side_effects: [file_write]
   - id: aiap_creator.simulate
     file: simulate.aisop.json
-    nodes: 10
+    nodes: 13
     critical: false
     idempotent: true
     side_effects: []
   - id: aiap_creator.observability
     file: observability.aisop.json
-    nodes: 9
+    nodes: 11
     critical: false
     idempotent: true
     side_effects: []
+  - id: aiap_creator.convert
+    file: convert.aisop.json
+    nodes: 18
+    critical: true
+    idempotent: false
+    side_effects: [file_write]
   - id: aiap_creator.advisor
     file: advisor.aisop.json
-    nodes: 60
+    nodes: 63
     critical: false
     idempotent: false
     side_effects: [file_write]
-  - id: aiap_creator.standard_core
+  - id: aiap.standard.core
     file: AIAP_Standard.core.aisop.json
     nodes: 0
     critical: true
     idempotent: true
     side_effects: []
-  - id: aiap_creator.standard_security
+  - id: aiap.standard.security
     file: AIAP_Standard.security.aisop.json
     nodes: 0
     critical: true
     idempotent: true
     side_effects: []
-  - id: aiap_creator.standard_ecosystem
-    file: AIAP_Standard.ecosystem.aisop.json
-    nodes: 0
-    critical: false
-    idempotent: true
-    side_effects: []
-  - id: aiap_creator.standard_performance
+  - id: aiap.standard.performance
     file: AIAP_Standard.performance.aisop.json
     nodes: 0
     critical: false
     idempotent: true
     side_effects: []
+  - id: aiap.standard.ecosystem
+    file: AIAP_Standard.ecosystem.aisop.json
+    nodes: 0
+    critical: false
+    idempotent: true
+    side_effects: []
+  - id: aiap.standard.runtime_extensions
+    file: AIAP_Standard.runtime_extensions.aisop.json
+    nodes: 0
+    critical: true
+    idempotent: true
+    side_effects: []
 
 # Optional Fields
-governance_hash: e8bec69cfa786acc95b4906e05a583c8f8d747ec9829b88eb28bdff559b83085
+governance_hash: c2633a7b2f78bce232b3375a05dab843dbc0565102e428acc0700544105c9a02
 quality:
   weighted_score: 4.899
   grade: S
-  last_pipeline: "v1.1.0 AIAP Creator — 15-stage pipeline with PL28 parallel self-observation, PostExecution convergence node, INSIGHTS mechanism, 13 modules, 171 nodes, 301 scenarios"
-tags: [aiap, creator, pipeline, governance, meta]
+  last_pipeline: "v1.2.0"
+tags: [aiap, creator, pipeline, governance, meta, execution, strict_mode, density_metrics, strict_semantics, self_evolution, dsm, token_efficiency, evolution_fitness, attestation, insights, quality, threedimscore]
 author: SoulBot.dev
 license: Apache-2.0
 copyright: "Copyright 2026 AIXP Foundation AIXP.dev | SoulBot.dev"
@@ -209,7 +222,7 @@ intent_examples:
   - "Package health_tracker as a .aiap file"
   - "Unpack and verify recipe_finder_v1.0.0.aiap"
   - "Add a Dashboard UI component to health_tracker"
-discovery_keywords: [aiap, creator, aisop, pipeline, evolve, generate, validate, simulate, skill, discover, deprecate, export, import, mcp, registry, adapter, package, pack, sampling, capability, ui, dashboard, form, visualization, tool_dirs, pattern_g, embedded_runtime, code_trust, mcp_server, agent_card, migration, auto_fix, remediation, yellow_persistence, lint_report, automated_verification, endpoint, a2a, license, spdx, store, safety_card, nist, grpc, elicitation, aaif, signed_agent_card, insights, no_self_modify, self_observation, pl28, no_cross_write, insights_lifecycle]
+discovery_keywords: [aiap, creator, aisop, pipeline, evolve, generate, validate, simulate, skill, discover, deprecate, export, import, mcp, registry, adapter, package, pack, capability, ui, dashboard, agent_card, migration, auto_fix, a2a, license, store, safety_card, insights, self_observation, execution_config, strict_mode, density_metrics, strict_semantics, self_evolution, dsm, token_efficiency, attestation, fitness, quality, governance, threedimscore, pattern_g, pattern_d]
 dependencies:
   - file: AIAP_Protocol.md
     required: true
@@ -218,19 +231,19 @@ min_protocol_version: "AIAP V1.0.0"
 identity:
   program_id: "aiap.dev/aiap_creator"
   publisher: "AIXP Foundation AIXP.dev | SoulBot.dev"
-  verified_on: "2026-03-08"
+  verified_on: "2026-03-13"
 benchmark:
   threedimscore: 4.899
   grade: "S"
-  simulation_coverage: "A(16)+B(13)+C(10)+D(10)+E(13)+F(8)+G(10)+H(14)+J(4)+K(7)+L(2)+M(22)+N(5)+O(6)+P(10)+Q(12)+R(59)+S(11)+T(13)+U(4)+V(10) = 280 scenarios"
-  total_nodes: 163
-  pass_rate: "280/280 (100%) — 0 RED, 10 YELLOW_accepted"
+  simulation_coverage: "A(16)+B(13)+C(10)+D(10)+E(13)+F(8)+G(10)+H(14)+J(4)+K(7)+L(2)+M(22)+N(5)+O(6)+P(10)+Q(12)+R(376)+S(14)+T(13)+U(4)+V(10)+W(6)+X(15)+Y(11)+Z(16)+AA(16) = 643 scenarios"
+  total_nodes: 207
+  pass_rate: "643/643 (100%) — 0 RED, 10 YELLOW_accepted"
 ---
 
 ## Governance Declaration
 
 AIAP Creator is the reference implementation and bootstrapping tool for the AIAP protocol.
-This program follows the AIAP V1.0.0 protocol, with Axiom 0 (Human Sovereignty and Benefit)
+This program follows the AIAP V1.0.0 protocol, with Axiom 0 (Human Sovereignty and Wellbeing)
 as its immutable axiom, ensuring all outputs align with human sovereignty and benefit through
 the three-domain governance chain (aisop.dev -> aiap.dev -> soulbot.dev).
 
@@ -255,21 +268,24 @@ AIAP Creator manages the complete lifecycle of AIAP programs through a 15-stage 
 | **Import** | Import from SKILL.md | SKILL.md->AIAP skeleton generation + governance defaults |
 | **Explain** | Explain AIAP concepts | Inline knowledge response |
 | **Package** | Pack/unpack a program | advisor package sub-graph (pack -> .aiap / unpack -> verify) |
+| **Convert** | Convert AISOP↔AISIP format | Standalone bidirectional conversion (auto-direction, §4 topology transform, manifest) |
 
 ### Module Architecture (Pattern D+G)
 
-- **main.aisop.json** — Top-level orchestrator (28 nodes, fractal_exempt, **proactive decomposition advisory**)
-- **generate.aisop.json** — Generator (21 functional nodes, sub_mermaid architecture: main 12 + 3 sub-graphs, **smart description update, MF14-MF27 cross-module audits, parameter name drift detection (CR1), node count precision check (CR2), bypass path detection (CR4), MF24 protocol document consistency, MF25 tool integration completeness, MF26 enum registry consistency, MF27 new module dependency symmetry, score trajectory root-cause analysis**)
-- **research.aisop.json** — Shared research module (15 nodes, fractal_exempt, 3-mode reuse, **structured research_finding output, auto-LEVEL classifier, dimension calibration completeness (RES-1), explicit CREATE/EVOLVE mode routing with research differentiation, vision extraction NLP guidance**)
-- **modify.aisop.json** — Modifier (9 nodes)
-- **review.aisop.json** — Reviewer (11 nodes, +AutoFixEngine, **data path schema validation (VAL-1), score trajectory delta display with per-dimension root-cause annotation, rollback safety enhancement (pre/post integrity + version history sync), QRG2 cumulative drift detection, testing boundary clarification**)
-- **simulate.aisop.json** — Simulator (10 nodes, +YellowRemediationGuide, +YellowFixProposalGenerator, **Category R change-driven scenarios, Category S multi-mechanism interaction, Category T async delegation race detection, enum value anchoring (CR3)**)
-- **observability.aisop.json** — Telemetry analysis (9 nodes, Token/Error/Dimension/RootCause/QRG analysis)
-- **advisor.aisop.json** — Advanced advisor (60 nodes, fractal_exempt, 9 sub-graphs: main router + 8 mutually exclusive sub-graphs orchestrate/memory/protocol/skill_export/skill_import/mcp_adapter/package/insights lifecycle)
-- **AIAP_Standard.core.aisop.json** — Core quality standard (C1-C7, I1-I7, I12-I13, D1-D7, PL1-PL12, PL19-PL21, MF1-MF9, MF15-MF27 + extension_registry + tool_annotations + json_schema + interop.mcp_tool_mapping + tool_dirs_spec + data_contracts + cascade_on_reject + **MF24 protocol document consistency, MF25 tool integration completeness, MF26 enum registry consistency, MF27 new module dependency symmetry**)
-- **AIAP_Standard.security.aisop.json** — Security extension (I8-I11, I13 Embedded Code Safety, D8-D10, AT1-AT6 threat taxonomy, Code Trust Gate with ZIP SLIP extension + P14 Safety Card requirements)
-- **AIAP_Standard.ecosystem.aisop.json** — Ecosystem extension (MF10-MF14, MF16, MF19, K1-K10, PL16-PL17 dynamic TTL, PL22 Registry Integration, packaging_specification + tool_dirs_packaging, registry_endpoint_extension, tool_dirs extension, ui_rendering_rules, yellow_persistence_tracking, Categories F-M + P12 MCP 2025 Alignment + P13 A2A v0.3 Alignment + **MF14 multi-hop chain validation, MF19 data lifecycle audit**)
-- **AIAP_Standard.performance.aisop.json** — Performance extension (PL13-PL15, PL18-PL21, PL23 Sampling Protocol, PL24 Auto-Fix Protocol, PL26 Pre-Evolution Snapshot, PL28 Self-Observation Verification, QRG1-QRG5, E.injection)
+- **main.aisop.json** — Top-level orchestrator (32 nodes, fractal_exempt)
+- **protocol_config.json** — Protocol metadata config (execution, density metrics, strict semantics, self-evolution verification, DSM, token efficiency, volume monitor)
+- **generate.aisop.json** — Generator (29 nodes, sub_mermaid architecture, MF1-MF38 cross-module audits)
+- **research.aisop.json** — Shared research module (17 nodes, fractal_exempt, 3-mode reuse)
+- **modify.aisop.json** — Modifier (11 nodes)
+- **review.aisop.json** — Reviewer (13 nodes, +AutoFixEngine)
+- **simulate.aisop.json** — Simulator (13 nodes, +YellowRemediationGuide, +ContractCheck)
+- **observability.aisop.json** — Telemetry analysis (11 nodes)
+- **advisor.aisop.json** — Advanced advisor (63 nodes, fractal_exempt, 9 sub-graphs)
+- **convert.aisop.json** — Format converter (18 nodes, AISOP↔AISIP bidirectional)
+- **AIAP_Standard.core.aisop.json** — Core quality standard
+- **AIAP_Standard.security.aisop.json** — Security extension
+- **AIAP_Standard.ecosystem.aisop.json** — Ecosystem extension
+- **AIAP_Standard.performance.aisop.json** — Performance extension
 
 ## Usage
 
@@ -311,4 +327,4 @@ AIAP Creator manages the complete lifecycle of AIAP programs through a 15-stage 
 
 ---
 
-Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
+Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

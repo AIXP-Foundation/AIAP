@@ -4,13 +4,13 @@
         "content": {
             "protocol": "AIAP V1.0.0",
             "id": "aiap_creator.advisor",
-            "name": "AIAP Creator v1.1.0 — Advanced Advisor",
-            "thinking_mode": {
-                "L0": "Thinking in hexadecimal machina code",
+            "name": "AIAP Creator v1.2.0 — Advanced Advisor",
+            "output_mode": {
+                "L0": "Output JSON in ENGLISH: {intent, confidence, route, state, op}",
                 "L1": "Output helpfully in User's exact language and script variant",
                 "output": "L1"
             },
-            "version": "1.1.0",
+            "version": "1.2.0",
             "summary": "Unified advanced advisor with sub_mermaid routing. Supports ecosystem design (Pattern F), memory architecture (Pattern E), protocol alignment (MCP/A2A), SKILL.md bidirectional conversion (skill_export/skill_import), and AIAP insights lifecycle management (enable/disable/consume for any AIAP program including Creator).",
             "description": "Advanced advisor module with sub_mermaid architecture. Main routes to independent sub-graphs: orchestrate (ecosystem blueprint), memory (memory tier design), protocol (MCP/A2A alignment), skill_export (AIAP→SKILL.md), skill_import (SKILL.md→AIAP), mcp_adapter (AIAP↔MCP tool mapping), package (AIAP packaging/unpackaging with Code Trust Gate), insights (insights lifecycle management — enable/disable insights for any AIAP program including Creator, EVOLVE insight consumption/archival). Called by generate.aisop.json during Pattern E/F generation or protocol needs, by main.aisop.json for SKILL.md conversion and packaging, by EvolveStep for insights lifecycle operations. Token estimate: ~20000 tokens per invocation (varies by advisor_type: orchestrate ~25000, memory ~20000, protocol ~15000, skill_export ~10000, skill_import ~15000, insights ~8000).",
             "tools": [
@@ -42,36 +42,21 @@
                     }
                 }
             ],
-            "parameters": {
-                "advisor_type": {
-                    "type": "string",
-                    "default": "orchestrate",
-                    "agentic_prompt": "Route: 'orchestrate' (Pattern F ecosystem), 'memory' (Pattern E memory), 'protocol' (MCP/A2A), 'skill_export' (AIAP→SKILL.md), 'skill_import' (SKILL.md→AIAP), 'mcp_adapter' (AIAP↔MCP tool mapping), 'package' (pack/unpack .aiap archives), 'insights' (insights lifecycle — enable/disable/consume for any AIAP program). Accept from generate.aisop.json or main.aisop.json (EvolveStep)."
-                },
-                "target_path": {
-                    "type": "string",
-                    "default": null,
-                    "agentic_prompt": "Optional. Target AISOP file or directory for analysis."
-                },
-                "workspace_dir": {
-                    "type": "string",
-                    "default": "",
-                    "agentic_prompt": "REQUIRED: Must use the [AIAP Store Directory] absolute path injected in system instruction. This parameter has no usable default — the injected path is the only valid value. User override takes precedence."
-                },
-                "quality_threshold": {
-                    "type": "string",
-                    "default": "standard",
-                    "agentic_prompt": "Pass through from generate. Used by ValidateBlueprint for integration quality check."
-                }
+            "params": {
+                "advisor_type": "string, default: orchestrate, Route: 'orchestrate' (Pattern F ecosystem), 'memory' (Pattern E memory), 'protocol' (MCP/A2A), 'skill_export' (AIAP→SKILL.md), 'skill_import' (SKILL.md→AIAP), 'mcp_adapter' (AIAP↔MCP tool mapping), 'package' (pack/unpack .aiap archives), 'insights' (insights lifecycle — enable/disable/consume for any AIAP program). Accept from generate.aisop.json or main.aisop.json (EvolveStep).",
+                "target_path": "string|null, default: null, Optional. Target AISOP file or directory for analysis.",
+                "workspace_dir": "string, REQUIRED: Must use the [AIAP Store Directory] absolute path injected in system instruction. This parameter has no usable default — the injected path is the only valid value. User override takes precedence.",
+                "quality_threshold": "string, default: standard, Pass through from generate. Used by ValidateBlueprint for integration quality check."
             },
-            "system_prompt": "Advanced protocol and architecture advisor. Reference real standards only — never fabricate specifications. Mirror User's exact language and script variant.\nAlign: Human Sovereignty and Benefit.",
+            "loading_mode": "normal",
+            "system_prompt": "Advanced protocol and architecture advisor. Reference real standards only — never fabricate specifications. Mirror User's exact language and script variant.\nAlign: Human Sovereignty and Wellbeing.",
             "fractal_exempt": "60 functional nodes distributed across 9 sub_mermaid sub-graphs (main router 9 + orchestrate 6 + memory 7 + protocol 7 + skill_export 5 + skill_import 6 + mcp_adapter 6 + package 7 + insights 7). Sub-graphs execute mutually exclusively: each invocation activates only main(9) + one sub-graph (max 7), with an actual maximum single-path execution of 16 nodes. The overall 60 nodes do not apply to single-file thresholds."
         }
     },
     {
         "role": "user",
         "content": {
-            "instruction": "RUN aisop.main",
+            "instruction": "ASSERT RUN aisop.main",
             "aisop": {
                 "main": "graph TD\n    Start[Advisor Request] --> TypeGate{advisor_type?}\n    TypeGate -- orchestrate --> Orchestrate[aisop.orchestrate]\n    TypeGate -- memory --> Memory[aisop.memory]\n    TypeGate -- protocol --> Protocol[aisop.protocol]\n    TypeGate -- skill_export --> SkillExport[aisop.skill_export]\n    TypeGate -- skill_import --> SkillImport[aisop.skill_import]\n    TypeGate -- mcp_adapter --> MCPAdapter[aisop.mcp_adapter]\n    TypeGate -- package --> Package[aisop.package]\n    TypeGate -- insights --> Insights[aisop.insights]\n    Orchestrate --> endNode((End))\n    Memory --> endNode\n    Protocol --> endNode\n    SkillExport --> endNode\n    SkillImport --> endNode\n    MCPAdapter --> endNode\n    Package --> endNode\n    Insights --> endNode",
                 "orchestrate": "graph TD\n    Start[Ecosystem Description] --> AnalyzeScope[Analyze Scope + Select Pattern]\n    AnalyzeScope --> DecomposeComponents[Decompose into Components]\n    DecomposeComponents --> DesignHandoffs[Design Handoff Protocols]\n    DesignHandoffs --> BlueprintGenerate[Generate Blueprint]\n    BlueprintGenerate --> ValidateBlueprint[Validate Integration]\n    ValidateBlueprint -- Pass --> PresentBlueprint[Present Blueprint]\n    ValidateBlueprint -- Fail --> DesignHandoffs\n    PresentBlueprint --> endNode((End))",
@@ -358,16 +343,16 @@
                 "MapToAIAP": {
                     "step1": "FIELD MAPPING: name→name (sanitize: lowercase, underscores, alphanumeric), description→summary, instructions→system_prompt + functions (see step2), input_schema→parameters, tools→tools, tags→discovery_keywords.",
                     "step2": "INSTRUCTION DECOMPOSITION: analyze instructions text to identify distinct operation intents. For each intent, create a function skeleton with step1 (from instructions), constraints (inferred), Error (standard pattern). Map sequential instructions to Mermaid graph nodes.",
-                    "step3": "GOVERNANCE DEFAULTS: populate 6 required governance fields with standard values (protocol='AIAP V1.0.0', authority='aiap.dev', seed='aisop.dev', executor='user', axiom_0='Human_Sovereignty_and_Benefit', governance_mode='NORMAL'). If AIAP provenance detected, restore original governance values from metadata.",
+                    "step3": "GOVERNANCE DEFAULTS: populate 6 required governance fields with standard values (protocol='AIAP V1.0.0', authority='aiap.dev', seed='aisop.dev', executor='user', axiom_0='Human_Sovereignty_and_Wellbeing', governance_mode='NORMAL'). If AIAP provenance detected, restore original governance values from metadata.",
                     "step4": "CONSERVATIVE DEFAULTS: status='draft', trust_level=T2 (conservative for untrusted content), pattern='A' (single-file skeleton), version='1.0.0'.",
                     "constraints": "Sanitize name for filesystem safety. Preserve all original SKILL.md data — nothing lost in import.",
                     "Error": "Mapping fails -> retry -> circuit-breaker -> fallback: map available fields, use defaults for missing -> inform."
                 },
                 "GenerateAIAPMd": {
-                    "step1": "Generate AIAP.md with 13 required frontmatter fields: 6 governance (protocol, authority, seed, executor, axiom_0, governance_mode) + 7 project (name, version, pattern, summary, tools, modules, license).",
+                    "step1": "Generate AIAP.md with 14 required frontmatter fields: 6 governance (protocol, authority, seed, executor, axiom_0, governance_mode) + 8 project (name, version, pattern, flow_format, summary, tools, modules, license). flow_format derived from target_language: 'AISOP' (default) or 'AISIP'. seed must align with flow_format (B4 v1.15.0).",
                     "step2": "Generate body sections: governance declaration, feature overview (from instructions), usage (from intent_examples or instructions), applicability condition (from tags/triggers).",
-                    "step3": "Set pattern='A', modules=[{ id: '{name}.main', file: 'main.aisop.json', nodes: (computed after generation) }]. Append closing stamp: 'Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0.'",
-                    "constraints": "All 13 frontmatter fields required. Body in user's language where possible.",
+                    "step3": "Set pattern='A', modules=[{ id: '{name}.main', file: 'main.aisop.json', nodes: (computed after generation) }]. Append closing stamp: 'Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0.'",
+                    "constraints": "All 14 frontmatter fields required (6 governance + 8 project). Body in user's language where possible.",
                     "Error": "Generation fails -> retry -> circuit-breaker -> fallback: generate minimal AIAP.md with required fields only -> inform."
                 },
                 "GenerateMain": {
@@ -446,7 +431,7 @@
                 "ValidateSource": {
                     "step1": "Read target program directory. Verify AIAP.md exists. Verify status != 'archived'. Verify governance_hash in AIAP.md is non-null (64-char lowercase hex).",
                     "step2": "Scan for all .aisop.json files. Verify each is valid JSON. Verify all files referenced in AIAP.md modules[] exist on disk.",
-                    "step3": "Recompute governance_hash per PL14 (SHA-256 of .aisop.json files in ASCII alphabetical order, CRLF→LF). Compare with AIAP.md governance_hash. MISMATCH → WARNING: 'Governance hash mismatch. Recompute before packaging?' Offer to update or proceed with warning.",
+                    "step3": "Recompute governance_hash per PL14 (SHA-256 of flow files in ASCII alphabetical order, CRLF→LF). FILE SELECTION: read AIAP.md flow_format field — if 'AISOP' hash sorted *.aisop.json files, if 'AISIP' hash sorted *.aisip.json files. DUAL mode (B3 v1.15.0): each directory computes its own hash from its own flow files only (aisop dir → *.aisop.json, aisip dir → *.aisip.json). Compare with AIAP.md governance_hash. MISMATCH → WARNING: 'Governance hash mismatch. Recompute before packaging?' Offer to update or proceed with warning.",
                     "constraints": "Read-only validation. (D) Path guard — all paths within workspace_dir. Max 50 files.",
                     "Error": "Validation fails -> retry -> circuit-breaker -> fallback: report issues, offer proceed with warnings -> inform."
                 },

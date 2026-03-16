@@ -144,6 +144,6 @@ This workflow ensures that every AIAP program in production has been verified fo
 AIAP_SEAL: AIAP/1.0
 Document: semantic-compiler
 Type: Conceptual Guide
-Axiom_0: Human Sovereignty and Benefit
+Axiom_0: Human Sovereignty and Wellbeing
 Status: ACTIVE
 ```

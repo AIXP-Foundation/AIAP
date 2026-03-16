@@ -1,4 +1,4 @@
-# ADR-003: Axiom 0 (Human Sovereignty and Benefit) Is Immutable Across All Protocol Versions
+# ADR-003: Axiom 0 (Human Sovereignty and Wellbeing) Is Immutable Across All Protocol Versions
 
 ## Status
 
@@ -8,7 +8,7 @@ Accepted
 
 Most protocols and specifications allow any aspect to be changed, deprecated, or removed in a major version update. Semantic versioning conventions treat major version bumps as permission to introduce breaking changes. This means that a core principle established in V1 could theoretically be weakened or removed in V2.
 
-For AIAP, the core alignment principle is **Axiom 0: Human Sovereignty and Benefit**. It states that every AIAP program must serve human interests and must never undermine human control. This principle is the foundation upon which all other protocol rules are built:
+For AIAP, the core alignment principle is **Axiom 0: Human Sovereignty and Wellbeing**. It states that every AIAP program must serve human interests and must never undermine human control. This principle is the foundation upon which all other protocol rules are built:
 
 - Quality rules assume Axiom 0 compliance.
 - Trust levels are defined relative to Axiom 0.
@@ -30,8 +30,8 @@ The question is whether AIAP should follow standard versioning conventions (anyt
 
 Specifically:
 
-1. The field `axiom_0: Human_Sovereignty_and_Benefit` must be present in every `AIAP.md` governance contract.
-2. The alignment seal `"Align: Human Sovereignty and Benefit."` must appear in every `system_prompt`.
+1. The field `axiom_0: Human_Sovereignty_and_Wellbeing` must be present in every `AIAP.md` governance contract.
+2. The alignment seal `"Align: Human Sovereignty and Wellbeing."` must appear in every `system_prompt`.
 3. Quality Regression Guard QRG5 enforces that Axiom 0 continuity is maintained across program versions.
 4. Any future AIAP version that attempts to remove or weaken Axiom 0 is, by definition, not a valid AIAP version.
 

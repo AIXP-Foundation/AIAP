@@ -2,7 +2,7 @@
 
 ## Our Pledge: Axiom 0
 
-In the interest of fostering an open, safe, and rigorous environment for the development of autonomous intelligence, we pledge to prioritize **Human Sovereignty and Benefit** above all experimental, commercial, or computational goals.
+In the interest of fostering an open, safe, and rigorous environment for the development of autonomous intelligence, we pledge to prioritize **Human Sovereignty and Wellbeing** above all experimental, commercial, or computational goals.
 
 This pledge is known as **Axiom 0**.
 
@@ -43,4 +43,4 @@ All reports will be reviewed and investigated promptly and fairly.
 
 ---
 
-Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
+Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

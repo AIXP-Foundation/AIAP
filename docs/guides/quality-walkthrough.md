@@ -231,7 +231,7 @@ The four standard guards are:
 | 2 | `authority` | Valid authority domain |
 | 3 | `seed` | Valid seed domain |
 | 4 | `executor` | Valid executor domain |
-| 5 | `axiom_0` | `Human_Sovereignty_and_Benefit` |
+| 5 | `axiom_0` | `Human_Sovereignty_and_Wellbeing` |
 | 6 | `governance_mode` | `NORMAL` or `STRICT` |
 | 7 | `name` | Program name |
 | 8 | `version` | Semantic version string |
@@ -294,4 +294,4 @@ Target Grade S for production. Use QRGs to prevent quality regression between ve
 
 ---
 
-> Align: Human Sovereignty and Benefit. Version: AIAP V1.0.0. www.aiap.dev
+> Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

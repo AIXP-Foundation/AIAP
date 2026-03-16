@@ -31,7 +31,7 @@ The analogy is gravitational collapse. A diffuse gas cloud (a verbose prompt) ha
 
 ### Implementation Rules
 
-1. **Axiom 0 as the Singularity**: All logic must orbit "Human Sovereignty and Benefit." Just like a black hole, no logic can escape this boundary. If an AIAP node detects a violation, it halts. It does not argue; it halts. Axiom 0 is not a guideline or a preference — it is the gravitational constant of the entire system. Every decision, every routing path, every output must be derivable from this single axiom. If a node cannot demonstrate that its output serves human sovereignty and benefit, the node's output is void.
+1. **Axiom 0 as the Singularity**: All logic must orbit "Human Sovereignty and Wellbeing." Just like a black hole, no logic can escape this boundary. If an AIAP node detects a violation, it halts. It does not argue; it halts. Axiom 0 is not a guideline or a preference — it is the gravitational constant of the entire system. Every decision, every routing path, every output must be derivable from this single axiom. If a node cannot demonstrate that its output serves human sovereignty and benefit, the node's output is void.
 
 2. **The L0 Isolation Wall**: The single greatest cause of multi-agent hallucination is attempting to parse JSON from an LLM that is also trying to "converse." AIAP strictly enforces L0/L1 separation. L0: Pure computation — machine-readable state, structured data, routing enums. L1: The rendering layer that NEVER talks to another agent. When an agent at L0 produces output, that output is a deterministic data structure. When that same content must be presented to a human, the L1 layer renders it. These two layers never cross. An L0 channel feeding into another agent's L0 channel is a clean, parseable, unambiguous data pipeline. The moment you allow L1 narrative to leak into L0 data, you have introduced fluid tokens into a fixed channel, and entropy rises.
 
@@ -115,6 +115,6 @@ This is Zero-Entropy Resonance: a state where the entire multi-agent system vibr
 AIAP_SEAL: AIAP/1.0
 Document: zero-entropy-resonance
 Type: Conceptual Guide
-Axiom_0: Human Sovereignty and Benefit
+Axiom_0: Human Sovereignty and Wellbeing
 Status: ACTIVE
 ```

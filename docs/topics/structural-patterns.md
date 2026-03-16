@@ -347,10 +347,10 @@ combination (e.g., E+G). If constraints conflict, the stricter one wins.
 
 Patterns combine to address compound requirements. Node counting guides complexity.
 Upgrade paths provide clear migration steps. Through all patterns, Axiom 0 -- Human
-Sovereignty and Benefit -- remains the immutable constraint.
+Sovereignty and Wellbeing -- remains the immutable constraint.
 
 ---
 
-Align: Human Sovereignty and Benefit.
+Align: Human Sovereignty and Wellbeing.
 Version: AIAP V1.0.0.
 www.aiap.dev
