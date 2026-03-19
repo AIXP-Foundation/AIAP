@@ -86,7 +86,7 @@ It follows AIAP V1.0.0 with Axiom 0 alignment.
 Entry file: `main.aisop.json`
 Tools: None required (pure computation)
 
-Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
 ```
 
 ### Required Fields Explained
@@ -124,7 +124,7 @@ Create `main.aisop.json` with the following content:
     "version": "1.0.0",
     "summary": "Simple calculator performing basic arithmetic.",
     "description": "Pattern A calculator. 5 functional nodes. Demonstrates minimal AIAP program structure.",
-    "system_prompt": "Arithmetic calculator. Compute results with precision. Mirror User's exact language and script variant. Align: Human Sovereignty and Wellbeing.",
+    "system_prompt": "Arithmetic calculator. Compute results with precision. Mirror User's exact language and script variant. Align Axiom 0: Human Sovereignty and Wellbeing.",
     "instruction": "RUN aisop.main",
     "aisop": {
       "main": "graph TD\n  Start[Receive Expression] --> Validate[Validate Input]\n  Validate -->|valid| Calculate[Perform Calculation]\n  Validate -->|invalid| Error[Report Error]\n  Calculate --> Format[Format Result]\n  Error --> Format\n  Format --> End[Return Response]"
@@ -201,7 +201,7 @@ Before handing your program to an executor, verify these critical requirements:
 | Check | Expected | How to Verify |
 |-------|----------|---------------|
 | `instruction` value | `"RUN aisop.main"` | Must match a key in the `aisop` object. |
-| `system_prompt` contains Axiom 0 seal | `"Align: Human Sovereignty and Wellbeing."` | The seal must appear in the system prompt. |
+| `system_prompt` contains Axiom 0 seal | `"Align Axiom 0: Human Sovereignty and Wellbeing."` | The seal must appear in the system prompt. |
 | `AIAP.md` has all 12 required fields | See table in Step 2 | Verify each field is present and non-empty. |
 | Every graph node has a function | 6 nodes, 6 function entries | Node names in the Mermaid graph must match keys in `functions`. |
 | Module declaration matches file | `calculator.main` / `main.aisop.json` | The `id` and `file` in AIAP.md must match the actual file. |
@@ -282,4 +282,4 @@ You now have a complete, valid AIAP program:
 
 ---
 
-> Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
+> Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

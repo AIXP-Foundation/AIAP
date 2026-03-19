@@ -30,4 +30,4 @@ This example includes the full AIAP Creator program: governance contracts (`AIAP
 
 ---
 
-Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

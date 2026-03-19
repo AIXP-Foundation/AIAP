@@ -10,10 +10,10 @@ governance_mode: NORMAL
 
 # Project Fields (8 required)
 name: aiap_creator
-version: "1.2.0"
+version: "1.50.0"
 pattern: D+G
 flow_format: "AISOP"
-summary: "AIAP Creator — reference implementation for creating, evolving, validating, simulating, and managing AIAP programs via a 15-stage pipeline. 14 modules, 207 nodes, 643 scenarios (A-Z, AA). Features: ThreeDimTest (MF1-MF38), EVOLVE CAP with adaptive complexity, governance integrity sync, quality history archival, stage cache chain verification, AISOP/AISIP/DUAL support, format conversion, protocol alignment (MCP/A2A). Pattern D+G, Grade S."
+summary: "AIAP Creator — creates, evolves, validates, simulates, and manages AIAP programs via 15-stage pipeline. 14 modules, 207 nodes, 659 scenarios. Pattern D+G, Grade S (4.929). v1.50.0: Align Axiom 0 seal upgrade (protocol errata). MAINTENANCE 16th. lightweight_policy enforced."
 tools:
   - name: file_system
     required: true
@@ -41,7 +41,7 @@ tools:
 modules:
   - id: aiap_creator.main
     file: main.aisop.json
-    nodes: 32
+    nodes: 33
     critical: true
     idempotent: false
     side_effects: [file_write]
@@ -125,11 +125,11 @@ modules:
     side_effects: []
 
 # Optional Fields
-governance_hash: c2633a7b2f78bce232b3375a05dab843dbc0565102e428acc0700544105c9a02
+governance_hash: 74b9ff726a2d0ea4f602beade0efeefc056dbcb3833ddd5a929dc273759548bf
 quality:
-  weighted_score: 4.899
+  weighted_score: 4.929
   grade: S
-  last_pipeline: "v1.2.0"
+  last_pipeline: "v1.49.0 → v1.50.0"
 tags: [aiap, creator, pipeline, governance, meta, execution, strict_mode, density_metrics, strict_semantics, self_evolution, dsm, token_efficiency, evolution_fitness, attestation, insights, quality, threedimscore]
 author: SoulBot.dev
 license: Apache-2.0
@@ -231,13 +231,13 @@ min_protocol_version: "AIAP V1.0.0"
 identity:
   program_id: "aiap.dev/aiap_creator"
   publisher: "AIXP Foundation AIXP.dev | SoulBot.dev"
-  verified_on: "2026-03-13"
+  verified_on: "2026-03-18"
 benchmark:
-  threedimscore: 4.899
+  threedimscore: 4.929
   grade: "S"
-  simulation_coverage: "A(16)+B(13)+C(10)+D(10)+E(13)+F(8)+G(10)+H(14)+J(4)+K(7)+L(2)+M(22)+N(5)+O(6)+P(10)+Q(12)+R(376)+S(14)+T(13)+U(4)+V(10)+W(6)+X(15)+Y(11)+Z(16)+AA(16) = 643 scenarios"
+  simulation_coverage: "A(16)+B(13)+C(10)+D(10)+E(13)+F(8)+G(10)+H(14)+J(4)+K(7)+L(2)+M(22)+N(5)+O(6)+P(10)+Q(12)+R(404)+S(20)+T(19)+U(14)+V(18)+W(12)+X(21)+Y(11)+Z(16)+AA(22)+AB(29)+AC(37)+AD(40)+AE(35)+AF(38)+AG(40)+AH(38)+AI(45)+AJ(2) = 999 scenarios"
   total_nodes: 207
-  pass_rate: "643/643 (100%) — 0 RED, 10 YELLOW_accepted"
+  pass_rate: "997/997 (100%) — 0 RED, 10 YELLOW_accepted"
 ---
 
 ## Governance Declaration
@@ -272,7 +272,7 @@ AIAP Creator manages the complete lifecycle of AIAP programs through a 15-stage 
 
 ### Module Architecture (Pattern D+G)
 
-- **main.aisop.json** — Top-level orchestrator (32 nodes, fractal_exempt)
+- **main.aisop.json** — Top-level orchestrator (33 nodes, fractal_exempt, steps_summary sub_mermaid)
 - **protocol_config.json** — Protocol metadata config (execution, density metrics, strict semantics, self-evolution verification, DSM, token efficiency, volume monitor)
 - **generate.aisop.json** — Generator (29 nodes, sub_mermaid architecture, MF1-MF38 cross-module audits)
 - **research.aisop.json** — Shared research module (17 nodes, fractal_exempt, 3-mode reuse)
@@ -327,4 +327,4 @@ AIAP Creator manages the complete lifecycle of AIAP programs through a 15-stage 
 
 ---
 
-Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

@@ -31,7 +31,7 @@ The question is whether AIAP should follow standard versioning conventions (anyt
 Specifically:
 
 1. The field `axiom_0: Human_Sovereignty_and_Wellbeing` must be present in every `AIAP.md` governance contract.
-2. The alignment seal `"Align: Human Sovereignty and Wellbeing."` must appear in every `system_prompt`.
+2. The alignment seal `"Align Axiom 0: Human Sovereignty and Wellbeing."` must appear in every `system_prompt`.
 3. Quality Regression Guard QRG5 enforces that Axiom 0 continuity is maintained across program versions.
 4. Any future AIAP version that attempts to remove or weaken Axiom 0 is, by definition, not a valid AIAP version.
 
@@ -50,3 +50,7 @@ Specifically:
 - **Edge case handling**: Some future scenarios may reveal tension between "human sovereignty" and "human benefit" (e.g., a human instructs an AI to act against other humans' interests). Axiom 0 as currently stated does not resolve such conflicts, and its immutability means the resolution must come from interpretation, not amendment.
 - **Fork pressure**: If a significant portion of the community disagrees with Axiom 0's specific formulation, they cannot change it through normal protocol governance. Their only option is to create a non-AIAP specification, which fragments the ecosystem.
 - **Philosophical rigidity**: Axiom 0 encodes a specific philosophical position (human-centric alignment). If the discourse shifts toward broader frameworks (sentient-centric, ecosystem-centric), AIAP cannot adapt its foundational axiom.
+
+---
+
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

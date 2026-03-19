@@ -15,3 +15,7 @@
 ## Consequences
 
 [What becomes easier or harder as a result?]
+
+---
+
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

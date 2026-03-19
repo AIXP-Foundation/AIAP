@@ -19,3 +19,7 @@ The AIAP Protocol is maintained by the AIAP Protocol Organization across three g
 ## Becoming a Maintainer
 
 Contributors who have demonstrated sustained, high-quality contributions to the AIAP protocol may be nominated as maintainers by existing maintainers. See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+---
+
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

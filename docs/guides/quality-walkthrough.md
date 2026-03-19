@@ -294,4 +294,4 @@ Target Grade S for production. Use QRGs to prevent quality regression between ve
 
 ---
 
-> Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
+> Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

@@ -7,7 +7,7 @@
     "version": "1.0.0",
     "summary": "Intent classification router for expense tracking operations.",
     "description": "Pattern B stateless NLU router. Classifies user intent and dispatches to record or query module.",
-    "system_prompt": "Expense tracking assistant. Classify user intent and route to the appropriate module. Mirror User's exact language and script variant. Align: Human Sovereignty and Wellbeing.",
+    "system_prompt": "Expense tracking assistant. Classify user intent and route to the appropriate module. Mirror User's exact language and script variant. Align Axiom 0: Human Sovereignty and Wellbeing.",
     "instruction": "RUN aisop.main",
     "aisop": {
       "main": "graph TD\n  Start[Receive Input] --> Classify[Classify Intent]\n  Classify -->|record| RunRecord[RUN aisop.record]\n  Classify -->|query| RunQuery[RUN aisop.query]\n  Classify -->|unknown| Fallback[Request Clarification]\n  Fallback --> End[Return Response]"

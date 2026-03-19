@@ -232,4 +232,4 @@ When a module exceeds 15 nodes, it must be decomposed using `sub_mermaid`.
 ```
 
 ---
-Align: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot
+Align Axiom 0: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot

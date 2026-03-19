@@ -17,7 +17,7 @@
       "description": "Defines the 7 RESERVED_KEYS shared by AISOP and AISIP at the functions layer. These keys are parsed by Runtime before step execution. Both protocols use identical syntax and semantics for all 7 keys.",
       "summary": "Runtime extension fields specification — 7 RESERVED_KEYS for error handling, retry, context filtering, output mapping, batch processing, parallel join, and constraints.",
       "loading_mode": "normal",
-      "system_prompt": "AIAP runtime extensions standard. Defines function-layer extension keys shared by AISOP and AISIP.\nAlign: Human Sovereignty and Wellbeing.",
+      "system_prompt": "AIAP runtime extensions standard. Defines function-layer extension keys shared by AISOP and AISIP.\nAlign Axiom 0: Human Sovereignty and Wellbeing.",
       "reserved_keys_spec": {
         "total_count": 7,
         "declaration_layer": "functions",

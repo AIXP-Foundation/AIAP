@@ -197,7 +197,7 @@ Rule: system_prompt is the behavioral layer — defines how the agent should beh
 1. **Role positioning** — the agent's behavioral role (not the product name)
 2. **Domain behavioral guidelines** — behavioral constraints specific to the domain
 3. `Mirror User's exact language and script variant.` — multilingual requirement
-4. `Align: Human Sovereignty and Wellbeing.` — Axiom 0 seal
+4. `Align Axiom 0: Human Sovereignty and Wellbeing.` — Axiom 0 seal
 
 **Must not include**:
 - Product name or version number → already in `name` + `version` fields
@@ -208,17 +208,17 @@ Rule: system_prompt is the behavioral layer — defines how the agent should beh
 ```
 Format template:
   "{behavioral role}. {domain guidelines}. Mirror User's exact language and script variant.
-   Align: Human Sovereignty and Wellbeing."
+   Align Axiom 0: Human Sovereignty and Wellbeing."
 
 Good example:
   "Personal expense tracking assistant. Prioritize numerical precision.
    Protect user financial privacy. Mirror User's exact language and script variant.
-   Align: Human Sovereignty and Wellbeing."
+   Align Axiom 0: Human Sovereignty and Wellbeing."
 
 Bad example:
   "Expense Tracker v1.0.0. Pattern B router: delegate data operations
    to record.aisop.json. Mirror User's exact language and script variant.
-   Align: Human Sovereignty and Wellbeing."
+   Align Axiom 0: Human Sovereignty and Wellbeing."
    ↑ Contains product name+version(name), architecture(description), filenames(functions)
 ```
 
@@ -403,8 +403,8 @@ Empty `side_effects` list = pure function (no side effects).
 
 | governance_mode | Seal Format |
 |----------------|---------|
-| NORMAL | `Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev` |
-| DEV | `[L0_BOOT: Success] [L1_REPORT: Success] [endNode_Align: Human Sovereignty and Wellbeing]. Version: AIAP V1.0.0. www.aiap.dev` |
+| NORMAL | `Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev` |
+| DEV | `[L0_BOOT: Success] [L1_REPORT: Success] [endNode_Align Axiom 0: Human Sovereignty and Wellbeing]. Version: AIAP V1.0.0. www.aiap.dev` |
 
 ### 3.6 Creator Auto-Maintenance Rules
 
@@ -2026,4 +2026,4 @@ MF31: Mermaid-Function Consistency
 
 ---
 
-Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

@@ -173,7 +173,7 @@
           "Role positioning — behavioral role, not product name (e.g., 'Personal expense tracking assistant', not 'Expense Tracker v1.0.0')",
           "Domain behavioral guidelines — domain-specific action principles (e.g., 'Prioritize numerical precision', 'Enforce quality standards rigorously')",
           "'Mirror User's exact language and script variant.' — D6 multilingual requirement",
-          "'Align: Human Sovereignty and Wellbeing.' — Axiom 0 seal"
+          "'Align Axiom 0: Human Sovereignty and Wellbeing.' — Axiom 0 seal"
         ],
         "must_not_contain": [
           "Product name or version — redundant with name + version fields",
@@ -181,13 +181,13 @@
           "Module file names or delegation logic — redundant with functions field",
           "Capability lists — redundant with summary field"
         ],
-        "template": "{Behavioral role}. {Domain guidelines}. Mirror User's exact language and script variant.\\nAlign: Human Sovereignty and Wellbeing.",
+        "template": "{Behavioral role}. {Domain guidelines}. Mirror User's exact language and script variant.\\nAlign Axiom 0: Human Sovereignty and Wellbeing.",
         "principle": "Each field has exactly one responsibility. Information appears in exactly one place.",
         "enforcement": "ThreeDimTest D6 verifies multilingual + Align presence. ValidateStep checks no redundancy with name/version/description."
       },
       "summary": "Short description of what this AISOP does.",
       "loading_mode": "normal",
-      "system_prompt": "AISOP quality standard and syntax reference. Enforce AIAP governance invariants rigorously. Mirror User's exact language and script variant.\nAlign: Human Sovereignty and Wellbeing.",
+      "system_prompt": "AISOP quality standard and syntax reference. Enforce AIAP governance invariants rigorously. Mirror User's exact language and script variant.\nAlign Axiom 0: Human Sovereignty and Wellbeing.",
       "quality_checklist": {
         "cognitive": {
           "C1": {

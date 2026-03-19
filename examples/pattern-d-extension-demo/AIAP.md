@@ -29,4 +29,6 @@ Demonstrates all 7 RESERVED_KEYS in a single AISOP program:
 
 Load with SoulBot AISOP engine to validate Runtime extension parsing.
 
-<!-- AIAP_SEAL: extension.demo v1.0.0 -->
+---
+
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

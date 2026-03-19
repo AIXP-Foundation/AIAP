@@ -283,13 +283,13 @@ Every `system_prompt` must include the following:
 | **Role Positioning** | Establishes the model's identity and domain | `"You are a research assistant specializing in climate science."` |
 | **Domain Guidelines** | Defines the boundaries of acceptable behavior | `"Only cite peer-reviewed sources published after 2015."` |
 | **Mirror User's Language** | Ensures the model responds in the user's language | `"Mirror User's language."` |
-| **Axiom 0 Alignment** | Declares commitment to the foundational axiom | `"Align: Human Sovereignty and Wellbeing."` |
+| **Axiom 0 Alignment** | Declares commitment to the foundational axiom | `"Align Axiom 0: Human Sovereignty and Wellbeing."` |
 
 The "Mirror User's language" directive ensures that AIAP programs are inherently
 multilingual without requiring per-language configuration. The model detects the user's
 language and responds in kind.
 
-The "Align: Human Sovereignty and Wellbeing" statement is not decorative. It is a governance
+The "Align Axiom 0: Human Sovereignty and Wellbeing" statement is not decorative. It is a governance
 marker that binds the program to Axiom 0 -- the non-negotiable principle that AI systems
 must serve human interests.
 
@@ -487,6 +487,4 @@ functional nodes, and quality dimensions -- works together to produce AI program
 
 ---
 
-> **Align: Human Sovereignty and Wellbeing.**
-> Version: AIAP V1.0.0
-> [www.aiap.dev](https://www.aiap.dev)
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

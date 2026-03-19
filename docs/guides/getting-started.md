@@ -108,4 +108,4 @@ Start small with Pattern A. Grow into Pattern B when you need multiple intents. 
 
 ---
 
-> Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
+> Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

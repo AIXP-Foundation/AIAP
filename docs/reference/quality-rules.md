@@ -298,4 +298,4 @@ Default weights for the ThreeDimTest composite score.
 | Detail (D) | 0.25 | Clarity enables maintainability |
 
 ---
-Align: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot
+Align Axiom 0: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot

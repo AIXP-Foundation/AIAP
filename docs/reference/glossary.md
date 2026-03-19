@@ -19,7 +19,7 @@
 | Brain Principle | Quality rule C6 requiring each module to have a single cognitive responsibility |
 | Capabilities | Optional AIAP.md field declaring offered and required capabilities for ecosystem interoperability |
 | Circuit Breaker | Named error recovery pattern defined by rule I4: `fails -> retry -> circuit-breaker -> fallback: {named alternative} -> inform user` |
-| Closing Seal | End-of-document marker: "Align: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot" -- required on all AIAP documents |
+| Closing Seal | End-of-document marker: "Align Axiom 0: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot" -- required on all AIAP documents |
 | Code Trust Gate | Six-step verification process for Pattern G embedded code: source verification, hash validation, permission audit, dependency scan, sandbox test, annotation reconciliation |
 | Composite Score | The product of Correctness, Intrinsic, and Detail scores: `C x I x D` |
 | Constraint Quality | Quality rule C2 requiring all constraints to be explicit, testable, and non-contradictory |
@@ -157,4 +157,4 @@
 | Simulation categories | `quality-rules.md` |
 
 ---
-Align: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot
+Align Axiom 0: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot

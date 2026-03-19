@@ -250,10 +250,10 @@ Every `AIAP.md` must end with the closing seal:
 
 ```
 ---
-Align: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot
+Align Axiom 0: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot
 ```
 
 The seal is a machine-readable and human-readable marker that confirms the document adheres to the AIAP governance framework. Omitting the seal is a D2 (Format Completeness) violation.
 
 ---
-Align: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot
+Align Axiom 0: Human Sovereignty and Wellbeing | Protocol: AIAP | Seed: AISOP | Executor: SoulBot

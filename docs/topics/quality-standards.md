@@ -355,10 +355,6 @@ A production-ready program must demonstrate adequate coverage across all 13 simu
 
 ---
 
-```
-AIAP_SEAL: AIAP/1.0
-Document: quality-standards
-Type: Conceptual Guide
-Axiom_0: Human Sovereignty and Wellbeing
-Status: ACTIVE
-```
+---
+
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

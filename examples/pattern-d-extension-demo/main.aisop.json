@@ -12,7 +12,7 @@
             "params": {
                 "data_source": "string, default: 'sample', The data source to fetch from."
             },
-            "system_prompt": "You are an extension demo executor. Process data items and handle errors gracefully."
+            "system_prompt": "You are an extension demo executor. Process data items and handle errors gracefully.\nAlign Axiom 0: Human Sovereignty and Wellbeing."
         }
     },
     {

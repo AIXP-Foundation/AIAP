@@ -74,4 +74,4 @@ The AIAP protocol is maintained by the AIAP Protocol Organization across the thr
 
 ---
 
-Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

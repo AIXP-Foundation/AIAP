@@ -197,7 +197,7 @@ C 语言类比：
 1. **角色定位** — agent 的行为角色（不是产品名）
 2. **领域行为准则** — 该领域特有的行为约束
 3. `Mirror User's exact language and script variant.` — 多语言要求
-4. `Align: Human Sovereignty and Wellbeing.` — Axiom 0 封印
+4. `Align Axiom 0: Human Sovereignty and Wellbeing.` — Axiom 0 封印
 
 **禁止包含**：
 - 产品名或版本号 → 已在 `name` + `version` 字段
@@ -207,17 +207,17 @@ C 语言类比：
 
 ```
 格式模板：
-  "{行为角色}. {领域准则}. Mirror User's exact language and script variant.\nAlign: Human Sovereignty and Wellbeing."
+  "{行为角色}. {领域准则}. Mirror User's exact language and script variant.\nAlign Axiom 0: Human Sovereignty and Wellbeing."
 
 正例：
   "Personal expense tracking assistant. Prioritize numerical precision.
    Protect user financial privacy. Mirror User's exact language and script variant.
-   Align: Human Sovereignty and Wellbeing."
+   Align Axiom 0: Human Sovereignty and Wellbeing."
 
 反例：
   "Expense Tracker v1.0.0. Pattern B router: delegate data operations
    to record.aisop.json. Mirror User's exact language and script variant.
-   Align: Human Sovereignty and Wellbeing."
+   Align Axiom 0: Human Sovereignty and Wellbeing."
    ↑ 包含产品名+版本(name)、架构(description)、文件名(functions)
 ```
 
@@ -402,8 +402,8 @@ modules:
 
 | governance_mode | 印章格式 |
 |----------------|---------|
-| NORMAL | `Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev` |
-| DEV | `[L0_BOOT: Success] [L1_REPORT: Success] [endNode_Align: Human Sovereignty and Wellbeing]. Version: AIAP V1.0.0. www.aiap.dev` |
+| NORMAL | `Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev` |
+| DEV | `[L0_BOOT: Success] [L1_REPORT: Success] [endNode_Align Axiom 0: Human Sovereignty and Wellbeing]. Version: AIAP V1.0.0. www.aiap.dev` |
 
 ### 3.6 Creator 自动维护规则
 
@@ -2024,4 +2024,4 @@ MF31: Mermaid-函数一致性
 
 ---
 
-Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

@@ -38,3 +38,7 @@ AIAP complements A2A and MCP. An AIAP program can participate in the A2A ecosyst
 - **Standalone operation**: An AIAP program that needs communication or tool access must rely on external protocols. AIAP alone does not provide these capabilities.
 - **Consistency enforcement**: AIAP can govern program structure but cannot enforce runtime communication patterns. An AIAP program might be perfectly structured but use A2A incorrectly --- AIAP has no authority over the transport layer.
 - **Dependency on external standards**: AIAP's interoperability story depends on A2A and MCP continuing to evolve in compatible directions.
+
+---
+
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

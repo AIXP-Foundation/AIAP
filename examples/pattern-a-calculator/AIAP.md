@@ -37,4 +37,4 @@ Calculator is a minimal AIAP program demonstrating Pattern A. It follows AIAP V1
 Entry file: `main.aisop.json`
 Tools: None required (pure computation)
 
-Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

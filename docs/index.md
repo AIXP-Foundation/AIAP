@@ -80,4 +80,4 @@ AIAP is an open protocol. Contributions are welcome:
 
 ---
 
-> Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
+> Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

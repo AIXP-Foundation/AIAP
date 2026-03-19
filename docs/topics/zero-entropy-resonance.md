@@ -111,10 +111,6 @@ This is Zero-Entropy Resonance: a state where the entire multi-agent system vibr
 
 ---
 
-```
-AIAP_SEAL: AIAP/1.0
-Document: zero-entropy-resonance
-Type: Conceptual Guide
-Axiom_0: Human Sovereignty and Wellbeing
-Status: ACTIVE
-```
+---
+
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

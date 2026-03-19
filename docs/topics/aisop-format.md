@@ -30,7 +30,7 @@ specification.
     "version": "1.0.0",
     "summary": "Brief capability description",
     "description": "Detailed architecture description",
-    "system_prompt": "Role description. Domain guidelines. Mirror User's exact language and script variant. Align: Human Sovereignty and Wellbeing.",
+    "system_prompt": "Role description. Domain guidelines. Mirror User's exact language and script variant. Align Axiom 0: Human Sovereignty and Wellbeing.",
     "instruction": "RUN aisop.main",
     "aisop": {
       "main": "graph TD\n  Start[Input] --> Process[Process] --> End[Output]"
@@ -69,7 +69,7 @@ a specific responsibility, documented in the field reference below.
 | `version`       | string | Yes      | Semantic version (`MAJOR.MINOR.PATCH`). Must follow SemVer. |
 | `summary`       | string | Yes      | One-line description of the program's capability. |
 | `description`   | string | Yes      | Detailed description of architecture, design decisions, and operational context. |
-| `system_prompt` | string | Yes      | Core behavioral instruction. Defines role, domain guidelines, language mirroring. MUST end with `"Align: Human Sovereignty and Wellbeing."` |
+| `system_prompt` | string | Yes      | Core behavioral instruction. Defines role, domain guidelines, language mirroring. MUST end with `"Align Axiom 0: Human Sovereignty and Wellbeing."` |
 | `instruction`   | string | Yes      | Entry point command. Typically `"RUN aisop.main"`. |
 | `aisop`         | object | Yes      | Contains one or more named Mermaid flowchart graphs. `main` is always required. |
 | `aisop.main`    | string | Yes      | Primary execution graph in Mermaid `graph TD` syntax. |
@@ -221,6 +221,4 @@ node logic. This modularity is impossible when everything is a prompt.
 
 ---
 
-Align: Human Sovereignty and Wellbeing.
-Version: AIAP V1.0.0.
-www.aiap.dev
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

@@ -17,7 +17,7 @@
       "description": "Performance and pipeline quality rules extending the core STANDARD. Includes post-simulate gate (PL13), governance hash computation (PL14), token budget (PL15), intra-stage parallelism (PL18), quality regression guards (QRG1-QRG5), edge case sub-categories (E.figurative, E.injection), and auto-fix protocol (PL24). Loaded for pipeline operations.",
       "summary": "Performance extension for AIAP quality standard — pipeline gates, regression guards, edge case testing.",
       "loading_mode": "normal",
-      "system_prompt": "AIAP performance quality extension. Enforce pipeline gate quality, regression detection, and comprehensive edge case testing. Mirror User's exact language and script variant.\nAlign: Human Sovereignty and Wellbeing.",
+      "system_prompt": "AIAP performance quality extension. Enforce pipeline gate quality, regression detection, and comprehensive edge case testing. Mirror User's exact language and script variant.\nAlign Axiom 0: Human Sovereignty and Wellbeing.",
       "pipeline_rules": {
         "description": "Performance pipeline rules (supplements PL1-PL12 in core).",
         "rules": {

@@ -30,7 +30,7 @@ In the `AIAP.md` manifest file, it appears as a dedicated field:
 In every `system_prompt`, it appears as the closing seal:
 
 ```
-Align: Human Sovereignty and Wellbeing.
+Align Axiom 0: Human Sovereignty and Wellbeing.
 ```
 
 Axiom 0 is the single non-negotiable constraint of the entire protocol. Everything else
@@ -96,7 +96,7 @@ Every AIAP specification document, every `system_prompt`, and every compliant ma
 ends with the closing seal:
 
 ```
-Align: Human Sovereignty and Wellbeing.
+Align Axiom 0: Human Sovereignty and Wellbeing.
 Version: AIAP V1.0.0.
 www.aiap.dev
 ```
@@ -180,6 +180,4 @@ boundary is absolute.
 
 ---
 
-Align: Human Sovereignty and Wellbeing.
-Version: AIAP V1.0.0.
-www.aiap.dev
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

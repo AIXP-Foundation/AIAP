@@ -390,10 +390,6 @@ This structural separation makes indirect prompt injection (AT3) architecturally
 
 ---
 
-```
-AIAP_SEAL: AIAP/1.0
-Document: security-model
-Type: Conceptual Guide
-Axiom_0: Human Sovereignty and Wellbeing
-Status: ACTIVE
-```
+---
+
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

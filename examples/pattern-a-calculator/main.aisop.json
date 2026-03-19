@@ -7,7 +7,7 @@
     "version": "1.0.0",
     "summary": "Simple calculator performing basic arithmetic.",
     "description": "Pattern A calculator. 5 functional nodes. Demonstrates minimal AIAP program structure.",
-    "system_prompt": "Arithmetic calculator. Compute results with precision. Mirror User's exact language and script variant. Align: Human Sovereignty and Wellbeing.",
+    "system_prompt": "Arithmetic calculator. Compute results with precision. Mirror User's exact language and script variant. Align Axiom 0: Human Sovereignty and Wellbeing.",
     "instruction": "RUN aisop.main",
     "aisop": {
       "main": "graph TD\n  Start[Receive Expression] --> Validate[Validate Input]\n  Validate -->|valid| Calculate[Perform Calculation]\n  Validate -->|invalid| Error[Report Error]\n  Calculate --> Format[Format Result]\n  Error --> Format\n  Format --> End[Return Response]"

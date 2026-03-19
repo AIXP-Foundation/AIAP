@@ -31,3 +31,7 @@ This security policy covers:
 ## Coordinated Disclosure
 
 We follow a coordinated disclosure process. Please do not publicly disclose vulnerabilities until a fix has been released and announced.
+
+---
+
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

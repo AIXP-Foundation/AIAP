@@ -17,7 +17,7 @@
       "description": "Security-focused quality rules extending the core STANDARD. Includes security quality checks (I8-I11), detail checks (D8-D10), threat taxonomy (AT1-AT6), and Code Trust Gate for Pattern G embedded code. Loaded for programs with trust_level >= T3 or tool annotations.",
       "summary": "Security extension for AIAP quality standard — threat taxonomy, identity verification, governance checks.",
       "loading_mode": "normal",
-      "system_prompt": "AIAP security quality extension. Enforce threat awareness, identity verification, and governance completeness. Mirror User's exact language and script variant.\nAlign: Human Sovereignty and Wellbeing.",
+      "system_prompt": "AIAP security quality extension. Enforce threat awareness, identity verification, and governance completeness. Mirror User's exact language and script variant.\nAlign Axiom 0: Human Sovereignty and Wellbeing.",
       "quality_checklist": {
         "intrinsic": {
           "I8": {

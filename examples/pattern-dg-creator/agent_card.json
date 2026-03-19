@@ -1,7 +1,7 @@
 {
   "name": "aiap_creator",
-  "description": "AIAP Creator — creates, evolves, discovers, deprecates, validates, and simulates AIAP programs through a 15-stage pipeline. ThreeDimTest (C1-C7, I1-I13, D1-D10), MF1-MF38 multi-file audit, EVOLVE CAP, governance integrity sync, quality history archival, stage cache chain verification, AISOP/AISIP/DUAL format support, protocol alignment (MCP/A2A). 14 modules, 207 nodes, 643 scenarios. Pattern D+G, Grade S.",
-  "version": "1.2.0",
+  "description": "AIAP Creator — creates, evolves, validates, simulates, and manages AIAP programs via 15-stage pipeline. 14 modules, 207 nodes, 659 scenarios. Pattern D+G, Grade S (4.929). v1.50.0: Align Axiom 0 seal upgrade. MAINTENANCE 16th. lightweight_policy enforced.",
+  "version": "1.50.0",
   "provider": "AIXP Foundation AIXP.dev | SoulBot.dev",
   "pattern": "D+G",
   "tags": [

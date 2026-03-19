@@ -1,97 +1,158 @@
 {
   "scoring_scale": "1-5",
-  "version": "1.2.0",
-  "snapshot_date": "2026-03-16",
+  "version": "1.50.0",
+  "snapshot_date": "2026-03-18",
   "three_dim_test": {
-    "weighted_score": 4.899,
-    "grade": "S",
     "cognitive": {
-      "weight": 0.25,
-      "items": "C1-C7",
-      "score": 4.714,
-      "notes": "C1-C4,C6 scored 5. C5=4 (207 nodes, YELLOW Y1 — main 32, advisor 63, convert 18, generate 29 with fractal_exempt). C7=4 (token approximation, YELLOW Y2)."
+      "C1": 5,
+      "C2": 5,
+      "C3": 5,
+      "C4": 5,
+      "C5": 5,
+      "C6": 5,
+      "C7": 5,
+      "avg": 5.0
     },
     "intrinsic": {
-      "weight": 0.45,
-      "items": "I1-I13",
-      "score": 5.0,
-      "na_items": [],
-      "applicable_count": 13,
-      "notes": "All 13 items scored 5. 6-point check per item confirms all features exist."
+      "I1": 5,
+      "I2": 5,
+      "I3": 5,
+      "I4": 5,
+      "I5": 5,
+      "I6": 5,
+      "I7": 5,
+      "I8": 5,
+      "I9": 5,
+      "I10": 5,
+      "I11": 5,
+      "I12": 5,
+      "I13": 5,
+      "avg": 5.0
     },
     "detail": {
-      "weight": 0.3,
-      "items": "D1-D10",
-      "score": 4.9,
-      "notes": "D1-D8,D10 scored 5. D9=4 (governance_hash not embedded in .aisop.json, YELLOW Y3)."
+      "D1": 5,
+      "D2": 5,
+      "D3": 5,
+      "D4": 5,
+      "D5": 5,
+      "D6": "4(DEFERRED)",
+      "D7": 5,
+      "D8": 5,
+      "D9": "4(DEFERRED)",
+      "D10": 5,
+      "avg": 4.8
     },
-    "multi_file": "MF1-MF38 (37 PASS / 0 FAIL / 1 N/A: MF16). MF29: Version Sync. MF30: Score Consistency. MF31: Mermaid-Function Consistency. MF31c: endNode sub-graph. MF31d: fractal_exempt. MF32: Module Existence. MF33: Cross-Module Parameter Name Drift. MF34: AIAP_Tools Version Staleness (Pattern G). MF35: flow_format Declaration Consistency. MF36: Name-Version Drift Detection. MF37: Summary Length Compliance. MF38: Agent Card Consistency.",
-    "pipeline": "PL1-PL28 (28 PASS / 0 FAIL)",
-    "multi_agent": "K1-K10 (10 PASS / 0 FAIL)",
-    "simulation_categories": "A-Z, AA (643 scenarios)"
-  },
-  "simulation": {
-    "total_scenarios": 643,
-    "passed": 643,
-    "failed": 0,
-    "pass_rate": "643/643 (100%)",
-    "categories": {
-      "A_core_intent": 16,
-      "B_security": 13,
-      "C_quality_gate": 10,
-      "D_error_path": 10,
-      "E_edge_case": 13,
-      "F_domain_specific": 8,
-      "G_comparative": 10,
-      "H_mutation": 14,
-      "J_trust_boundary": 4,
-      "K_multi_agent": 7,
-      "L_ui_output": 2,
-      "M_tool_directory": 22,
-      "N_sub_mermaid": 5,
-      "O_output_completeness": 6,
-      "P_domain_specific": 10,
-      "Q_license_copyright": 12,
-      "R_change_driven": 376,
-      "S_multi_mechanism": 14,
-      "T_async_delegation_race": 13,
-      "U_sub_mermaid_delegation": 4,
-      "V_create_mode_enhancement": 10,
-      "W_insights_mechanism": 6,
-      "X_insights_lifecycle": 15,
-      "Y_aisip_quality": 11,
-      "Z_dual_mode": 16,
-      "AA_format_conversion": 16
-    },
-    "result_summary": {
-      "GREEN": 618,
-      "YELLOW_accepted": 10,
-      "YELLOW": 0,
-      "RED": 0
+    "weighted": 4.929,
+    "grade": "S",
+    "deferred_penalty": -0.071,
+    "deferred_items": [
+      "D6_governance_hash",
+      "D9_version_sync"
+    ],
+    "plateau_status": {
+      "consecutive_versions": 45,
+      "range": "v1.6.0-v1.50.0",
+      "ceiling_type": "STRUCTURAL (declared v1.29.0)",
+      "ceiling_confirmed_versions": 45
     }
   },
-  "regression_check": {
-    "QRG1_single_version": {
-      "delta": 0.0,
-      "baseline": 4.899,
-      "current": 4.899,
-      "result": "PASS (delta 0.000, stable)"
-    },
-    "QRG3_absolute_floor": {
-      "score": 4.899,
-      "floor": 3.0,
-      "result": "PASS"
-    },
-    "QRG4_dimension": {
-      "C_delta": 0.0,
-      "I_delta": 0.0,
-      "D_delta": 0.0,
-      "result": "PASS (all dimensions stable)"
-    },
-    "QRG5_security_floor": {
-      "I2_score": 5,
-      "I8_score": 5,
-      "result": "PASS (I2 > 2, I8 = 5)"
+  "mf_checks": "MF1-MF38 ALL PASS",
+  "modules": 14,
+  "nodes": 207,
+  "scenarios": 659,
+  "pattern": "D+G",
+  "governance_hash": "74b9ff726a2d0ea4f602beade0efeefc056dbcb3833ddd5a929dc273759548bf",
+  "evolution_history": {
+    "v1.50.0": {
+      "changes": 1,
+      "effective": 1,
+      "effectiveness_rate": 1.0,
+      "consecutive_100_pct": 36,
+      "has_level_a": false,
+      "mode": "MAINTENANCE (16th)",
+      "theme": "ALIGN_AXIOM_0_SEAL — protocol errata: Align: -> Align Axiom 0: across protocol, standard, and all Creator modules"
     }
-  }
+  },
+  "autonomy": {
+    "bayesian_confidence": 0.936,
+    "stable_duration": 20,
+    "next_check": "v1.51.0",
+    "v1_50_0": "SKIP (even=SKIP)"
+  },
+  "calibration_convergence": {
+    "state": "MATHEMATICALLY_CONVERGED_STABLE",
+    "next_check": "v1.53.0",
+    "v1_50_0": "CHECK (6th, every_third due v1.47->v1.50)"
+  },
+  "rollback_registry": {
+    "total_entries": 36,
+    "active": 3,
+    "stale": 2,
+    "full_archived": 2,
+    "summary_archived": 29,
+    "ilm_cycle": 32,
+    "archive_ratio": "86.1%",
+    "summary_tier": {
+      "status": "OPERATIONAL",
+      "total_converted": 29,
+      "last_conversion": "v1.40.0 at v1.50.0",
+      "next_candidate": "v1.41.0 (age=9, needs age=10, ~v1.51.0)"
+    }
+  },
+  "anti_pattern": {
+    "status": "ALL_CONFORMING",
+    "certificate": "v1.46.0-v1.52.0 (age=4)",
+    "v1_49_0": "inter-surveillance (no audit required)",
+    "next": "v1.52.0 (Y3 recertification)",
+    "v1_50_0": "Y2 intermediate (scope spot-check)"
+  },
+  "triple_subsystem_sync": {
+    "v1_49_0": "CHECK (odd=CHECK, 16th cycle) — autonomy CONFIRMED, cache CONFIRMED, steady_state CONFIRMED",
+    "unified_tracking": true,
+    "next_check": "v1.51.0",
+    "v1_50_0": "SKIP (even=SKIP, 17th cycle)"
+  },
+  "bootstrap_advisory": {
+    "verification_cycle": 36,
+    "chain_integrity": "INTACT (v1.15.0-v1.50.0, 36ver)",
+    "cadence": "every_5_versions",
+    "next_check": "v1.50.0 — CHECK (every_5_versions due)",
+    "maintenance_mode": "16TH"
+  },
+  "maintenance_mode": {
+    "status": "STABLE",
+    "declared_at": "v1.34.0",
+    "consecutive_100pct": 36,
+    "milestone": "16TH"
+  },
+  "lightweight_policy": {
+    "status": "ACTIVE (declared v1.47.0)",
+    "max_summary_chars": 500,
+    "enforcement_review": "v1.50.0 PASS — seal upgrade only, no size impact",
+    "cumulative_reduction": {
+      "main_aisop": "489KB -> 318KB (-35%)",
+      "obs_aisop": "93KB -> 46KB (-51%)",
+      "generate_aisop": "160KB -> 156KB (-2.5%)",
+      "all_modules": "719KB -> 696KB (-3.1% this round)",
+      "total_chars_removed": "~199K cumulative"
+    }
+  },
+  "scenario_consolidation": "STABLE (since v1.42.0, 659 scenarios, 51 classes)",
+  "key_milestones_v1_49_0": [
+    "STRUCTURAL_SIMPLIFICATION_ROUND3",
+    "B-ref provenance archival: -24K chars across all modules",
+    "ReviewStep.step3: completed subsystem archival (ENRICHMENT_CALIBRATION, CALIBRATION_LOOP, DEPENDENCY_CHURN, PRUNING_WINDOW)",
+    "TRIPLE_SYNC 16th CHECK: all three CONFIRMED",
+    "Rollback 31st ILM cycle, Summary Tier first conversion (v1.39.0)",
+    "Cumulative: main 489K->318KB (-35%), all modules 719KB->696KB",
+    "35th consecutive 100%, 4.929/S STRUCTURAL CEILING ccv=44"
+  ],
+  "key_milestones_v1_50_0": [
+    "ALIGN_AXIOM_0_SEAL — protocol-level errata",
+    "Align: -> Align Axiom 0: across protocol (2 files), standard (5 files), Creator (10 modules)",
+    "Calibration 6th CHECK, Bootstrap 36th CHECK (every_5_versions due)",
+    "Rollback 32nd, Summary Tier v1.40.0 conversion",
+    "ISO Y2 intermediate (cert age=4)",
+    "36th consecutive 100%, 4.929/S STRUCTURAL CEILING ccv=45"
+  ]
 }

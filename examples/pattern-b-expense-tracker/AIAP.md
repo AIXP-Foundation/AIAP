@@ -67,4 +67,4 @@ Expense Tracker follows AIAP V1.0.0 with Axiom 0 alignment. Financial data priva
 Entry file: `main.aisop.json` --- stateless NLU router.
 Tools: `file_system` (required) for data persistence.
 
-Align: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev

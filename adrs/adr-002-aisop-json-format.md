@@ -46,3 +46,7 @@ The `.aisop.json` extension signals that the file is an AI Standard Operating Pr
 - **Human editing**: JSON is more verbose than YAML. Writing and reading large `.aisop.json` files requires more scrolling. No comments are allowed in standard JSON.
 - **Mermaid limitations**: Complex execution graphs with many branches can produce dense Mermaid strings. Very large graphs may be hard to read as inline strings.
 - **Natural language steps**: Because function steps are natural language strings, there is an inherent ambiguity in what "step1: Parse input" means at the implementation level. AIAP mitigates this through constraints and guards, but the steps themselves remain semantic rather than executable.
+
+---
+
+Align Axiom 0: Human Sovereignty and Wellbeing. Version: AIAP V1.0.0. www.aiap.dev
